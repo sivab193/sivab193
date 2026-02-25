@@ -38,14 +38,8 @@ Building scalable systems, secure applications and cool side projects 🚀
 ---
 
 ## 📊 GitHub Analytics
-
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=sivab193&show_icons=true&theme=tokyonight&hide_border=true" height="180" alt="sivab193 github stats" />
 <img src="https://streak-stats.demolab.com?user=sivab193&theme=tokyonight&hide_border=true" height="180" alt="sivab193 streak stats" />
-</p>
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sivab193&layout=compact&theme=tokyonight&hide_border=true" height="180" alt="sivab193 top langs" />
 </p>
 
 ---
