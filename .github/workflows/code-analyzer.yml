@@ -1,0 +1,19 @@
+name: Code Analyzer
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows you to manually trigger it
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Allows the action to commit changes to the README
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Code Analyzer
+        uses: arhamkhnz/github-code-analyzer@main
+        with:
+          GH_TOKEN: ${{ secrets.GH_PAT }} # Requires a PAT with 'repo' scope to read all repos
+          README_PATH: 'README.md'
