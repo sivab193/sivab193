@@ -87,7 +87,7 @@ query($login:String!){
     followers{totalCount}
     contributionsCollection{
       totalCommitContributions restrictedContributionsCount
-      contributionCalendar{ totalContributions weeks{ contributionDays{ contributionCount } } }
+      contributionCalendar{ totalContributions weeks{ contributionDays{ contributionCount date } } }
     }
   }
 }"""
@@ -100,7 +100,6 @@ query($login:String!,$cursor:String){
       nodes{
         name isPrivate description url homepageUrl stargazerCount pushedAt
         primaryLanguage{name color}
-        repositoryTopics(first:4){nodes{topic{name}}}
         languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}
         defaultBranchRef{name}
       }
@@ -461,42 +460,114 @@ def render_repos(theme_name, data):
     return "\n".join(p)
 
 
-# --------------------------------------------------------------- README injection
-def update_readme(data):
-    path = os.path.join(ROOT, "README.md")
-    if not os.path.exists(path):
-        return
-    start, end = "<!-- LATEST:START -->", "<!-- LATEST:END -->"
-    text = open(path, encoding="utf-8").read()
-    if start not in text or end not in text:
-        return
+# ----------------------------------------------------- commit pulse (ECG monitor)
+def _pulse_palette(theme_name):
+    if theme_name == "dark":
+        return dict(win="#1e1e1e", title="#323233", body="#0d1117", grid="#1b2129",
+                    grid2="#232b35", base="#30363d", line="#3fb950", glow="#3fb950",
+                    dim="#7d8792", tx="#c9d1d9", tabtx_dim="#8a8a8a", border="#0d1117")
+    return dict(win="#ffffff", title="#e4e4e4", body="#f6f8fa", grid="#e9edf1",
+                grid2="#dfe4ea", base="#d0d7de", line="#2da44e", glow="#40c463",
+                dim="#59636e", tx="#1f2328", tabtx_dim="#7a7a7a", border="#d0d7de")
 
-    pub = [r for r in data["repos"] if not r["isPrivate"] and r["name"] != data["user"]["login"]]
-    pub = pub[:6]
-    rows = ["| Project | What it is | Stack | Lines |", "|---|---|---|---|"]
-    for r in pub:
-        name = r["name"]
-        link = r["homepageUrl"] or r["url"]
-        title = f"**[{name}]({link})**"
-        # descriptor fallback: description -> live site -> topics -> dash
-        desc = (r["description"] or "").strip()
-        if not desc and r["homepageUrl"]:
-            domain = r["homepageUrl"].split("//")[-1].strip("/").split("/")[0]
-            desc = f"🔗 Live at {domain}"
-        if not desc:
-            topics = [t["topic"]["name"] for t in (r.get("repositoryTopics") or {}).get("nodes", [])]
-            desc = " · ".join(topics)
-        if len(desc) > 78:
-            desc = desc[:75].rstrip() + "…"
-        desc = desc.replace("|", "\\|") or "—"
-        lang = (r.get("primaryLanguage") or {}).get("name") or "—"
-        loc = f"{r.get('loc_add', 0):,}"
-        rows.append(f"| {title} | {desc} | `{lang}` | {loc} |")
-    block = start + "\n" + "\n".join(rows) + "\n" + end
-    pre = text.split(start)[0]
-    post = text.split(end)[1]
-    open(path, "w", encoding="utf-8").write(pre + block + post)
-    sys.stderr.write(f"updated README latest-projects ({len(pub)} repos)\n")
+
+def render_pulse(theme_name, data):
+    """ECG-style monitor: contribution activity traced as a heartbeat that draws in."""
+    c = _pulse_palette(theme_name)
+    cal = data["user"]["contributionsCollection"]["contributionCalendar"]
+    weeks = cal["weeks"]
+    week_sums = [sum(d["contributionCount"] for d in w["contributionDays"]) for w in weeks]
+    days = [d for w in weeks for d in w["contributionDays"]]
+    total = cal["totalContributions"]
+    best = max((d["contributionCount"] for d in days), default=0)
+    streak = 0
+    for d in reversed(days):
+        if d["contributionCount"] > 0:
+            streak += 1
+        else:
+            break
+    maxw = max(week_sums) or 1
+
+    TH = 34
+    READ_Y = 62
+    BASE_Y = 174
+    SPIKE = 86
+    HH = 252
+    PAD = 26
+    plot_w = W - 2 * PAD
+    n = len(week_sums)
+    wk = plot_w / n
+
+    # ECG heartbeat complex: (fraction of week, amplitude as multiple of A) ; +up
+    complex_pts = [
+        (0.00, 0.0), (0.16, 0.0), (0.22, 0.14), (0.28, 0.0), (0.33, -0.12),
+        (0.39, 1.0), (0.45, -0.30), (0.51, 0.0), (0.60, 0.24), (0.70, 0.0), (1.0, 0.0),
+    ]
+    pts = []
+    for i, s in enumerate(week_sums):
+        A = s / maxw
+        x0 = PAD + i * wk
+        for frac, amp in complex_pts:
+            x = x0 + frac * wk
+            y = BASE_Y - amp * A * SPIKE
+            pts.append((x, y))
+    d = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts)
+
+    p = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
+        f'width="{W}" height="{HH}" viewBox="0 0 {W} {HH}" '
+        f'font-family="ui-monospace,SFMono-Regular,\'SF Mono\',Menlo,Consolas,\'Liberation Mono\',monospace">',
+        f"<style>text{{white-space:pre;}}"
+        f".ecg{{stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 3.4s ease-out forwards;}}"
+        "@keyframes draw{to{stroke-dashoffset:0;}}"
+        ".fin{opacity:0;animation:pf 1s ease forwards;}@keyframes pf{to{opacity:1;}}"
+        "@keyframes beat{0%,100%{r:4px;}50%{r:6px;}}.dot{animation:beat 1s ease-in-out infinite;}"
+        "@media(prefers-reduced-motion:reduce){.ecg{stroke-dashoffset:0;animation:none;}.fin{opacity:1;animation:none;}.dot{animation:none;}}"
+        "</style>",
+        f'<rect x="0.5" y="0.5" width="{W-1}" height="{HH-1}" rx="{RADIUS}" fill="{c["win"]}" stroke="{c["border"]}"/>',
+        f'<clipPath id="{theme_name}pwin"><rect x="0" y="0" width="{W}" height="{HH}" rx="{RADIUS}"/></clipPath>',
+        f'<g clip-path="url(#{theme_name}pwin)">',
+        f'<rect x="0" y="{TH}" width="{W}" height="{HH-TH}" fill="{c["body"]}"/>',
+        f'<rect x="0" y="0" width="{W}" height="{TH}" fill="{c["title"]}"/>',
+    ]
+    for i, col in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+        p.append(f'<circle cx="{20+i*20}" cy="{TH/2}" r="6" fill="{col}"/>')
+    p.append(f'<text x="{W/2}" y="{TH/2+4}" text-anchor="middle" font-size="13" fill="{c["tabtx_dim"]}">'
+             f'commit-pulse — heart of the year</text>')
+
+    # monitor grid
+    gy0, gy1 = TH, HH
+    for gx in range(PAD, W - PAD + 1, 34):
+        p.append(f'<line x1="{gx}" y1="{gy0}" x2="{gx}" y2="{gy1}" stroke="{c["grid"]}" stroke-width="1"/>')
+    for gy in range(TH + 12, HH, 30):
+        p.append(f'<line x1="{PAD}" y1="{gy}" x2="{W-PAD}" y2="{gy}" stroke="{c["grid"]}" stroke-width="1"/>')
+    p.append(f'<line x1="{PAD}" y1="{BASE_Y}" x2="{W-PAD}" y2="{BASE_Y}" stroke="{c["base"]}" stroke-width="1" stroke-dasharray="2 4"/>')
+
+    # readouts
+    p.append(f'<text x="{PAD}" y="{READ_Y}" font-size="30" font-weight="700" fill="{c["line"]}" '
+             f'class="fin" style="animation-delay:.2s">{fmt(total)}</text>')
+    p.append(f'<text x="{PAD}" y="{READ_Y+16}" font-size="11" letter-spacing="1.5" fill="{c["dim"]}" '
+             f'class="fin" style="animation-delay:.2s">CONTRIBUTIONS · {n} WEEKS</text>')
+    p.append(f'<text x="{W-PAD}" y="{READ_Y-12}" text-anchor="end" font-size="13" fill="{c["tx"]}" '
+             f'class="fin" style="animation-delay:.5s"><tspan fill="{c["line"]}">♥</tspan> {streak}-day streak</text>')
+    p.append(f'<text x="{W-PAD}" y="{READ_Y+8}" text-anchor="end" font-size="13" fill="{c["tx"]}" '
+             f'class="fin" style="animation-delay:.7s"><tspan fill="{c["line"]}">◆</tspan> peak {best}/day</text>')
+
+    # ECG line: soft glow underlay + crisp line (both draw together), sharing path id
+    p.append(f'<path id="{theme_name}ecg" class="ecg" d="{d}" pathLength="1000" fill="none" '
+             f'stroke="{c["glow"]}" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" stroke-linejoin="round"/>')
+    p.append(f'<path class="ecg" d="{d}" pathLength="1000" fill="none" '
+             f'stroke="{c["line"]}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>')
+
+    # sweeping dot that rides the trace after it draws
+    p.append(f'<g class="fin" style="animation-delay:3.2s">'
+             f'<circle r="10" fill="{c["glow"]}" opacity="0.16"/>'
+             f'<circle class="dot" r="4" fill="{c["line"]}"/>'
+             f'<animateMotion begin="3.4s" dur="5s" repeatCount="indefinite" rotate="0" calcMode="linear">'
+             f'<mpath xlink:href="#{theme_name}ecg"/></animateMotion></g>')
+
+    p.append("</g></svg>")
+    return "\n".join(p)
 
 
 def main():
@@ -508,7 +579,8 @@ def main():
             f.write(render(theme, data))
         with open(os.path.join(ROOT, "assets", f"repos-{theme}.svg"), "w", encoding="utf-8") as f:
             f.write(render_repos(theme, data))
-    update_readme(data)
+        with open(os.path.join(ROOT, "assets", f"pulse-{theme}.svg"), "w", encoding="utf-8") as f:
+            f.write(render_pulse(theme, data))
     sys.stderr.write(
         f"done: +{T['add']:,} / -{T['del']:,} net {T['net']:,} | "
         f"{T['commits_all_time']} commits | {T['repo_count']} repos\n"

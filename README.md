@@ -6,7 +6,8 @@
   <a href="https://siv19.dev/">🌐 Website</a> •
   <a href="https://linkedin.com/in/sivab193">💼 LinkedIn</a> •
   <a href="https://github.com/sivab193">🐙 GitHub</a> •
-  <a href="https://ieeexplore.ieee.org/author/37089725626">📄 IEEE</a>
+  <a href="https://ieeexplore.ieee.org/author/37089725626">📄 IEEE</a> •
+  <a href="mailto:contact@siv19.dev">📧 Email</a>
 </p>
 
 <p align="center">
@@ -28,23 +29,6 @@
 
 ---
 
-## 🚀 Latest Projects
-
-<!-- LATEST:START -->
-| Project | What it is | Stack | Lines |
-|---|---|---|---|
-| **[cuberverse](https://cv.siv19.dev)** | 🔗 Live at cv.siv19.dev | `TypeScript` | 24,791 |
-| **[homeo-portal](https://homeo-taupe.vercel.app)** | 🔗 Live at homeo-taupe.vercel.app | `TypeScript` | 13,582 |
-| **[movies-tracker](https://mt.siv19.dev/)** | Modern full-stack movie tracker with global watch-time leaderboards, automa… | `TypeScript` | 23,466 |
-| **[cloudclip](https://github.com/sivab193/cloudclip)** | — | `TypeScript` | 88,590 |
-| **[athi](https://advaitham.vercel.app/)** | Personal Website for Dr. P Advaitham | `HTML` | 1,923 |
-| **[gmeet-stats](https://gs.siv19.dev)** | A website where users can check their Google Meet all-time stats from Googl… | `HTML` | 4,124 |
-<!-- LATEST:END -->
-
-<p align="center"><a href="https://github.com/sivab193?tab=repositories">→ browse all repositories</a></p>
-
----
-
 ## 📊 Biggest Builds — by lines of code
 
 <p align="center">
@@ -59,16 +43,6 @@
 
 ---
 
-## 🛠️ Tech Stack
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=ts,js,py,react,nextjs,nodejs,express,flask,fastapi,spring,angular,dart,cs,cpp,java,aws,gcp,docker,postgres,mongodb,mysql,redis&perline=11&theme=dark" />
-  </a>
-</p>
-
----
-
 ## 🧠 What I'm Working On
 
 - ☁️ Cloud & distributed systems — self-hosted infra, API gateways, real-time trackers
@@ -78,12 +52,20 @@
 
 ---
 
-## 🐍 Contribution Graph
+## 💓 Commit Pulse
 
-![Snake animation](https://raw.githubusercontent.com/sivab193/sivab193/output/github-contribution-grid-snake.svg)
+<p align="center">
+  <a href="https://github.com/sivab193">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sivab193/sivab193/main/assets/pulse-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sivab193/sivab193/main/assets/pulse-light.svg">
+      <img alt="Commit Pulse — a year of contributions traced as a heartbeat" src="https://raw.githubusercontent.com/sivab193/sivab193/main/assets/pulse-light.svg" width="100%">
+    </picture>
+  </a>
+</p>
 
 ---
 
 ## 🤝 Let's Connect
 
-💼 Open to internships & SWE opportunities &nbsp;·&nbsp; 📬 Best reached on [LinkedIn](https://linkedin.com/in/sivab193)
+💼 Open to internships & SWE opportunities &nbsp;·&nbsp; 📬 Best reached on [LinkedIn](https://linkedin.com/in/sivab193) or [contact@siv19.dev](mailto:contact@siv19.dev)
