@@ -1,0 +1,48 @@
+name: Profile Card
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily at 06:00 UTC
+  workflow_dispatch:        # run on demand
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/generate.py"
+      - ".github/workflows/profile.yml"
+
+# avoid overlapping runs racing on the commit
+concurrency:
+  group: profile-card
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate profile card
+        env:
+          # PAT with repo read scope so private repos are counted.
+          # Falls back to the built-in token (public repos only) if GH_PAT is unset.
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: python .github/scripts/generate.py
+
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/ README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh profile card [skip ci]"
+            git push
+          fi

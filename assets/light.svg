@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="482" viewBox="0 0 860 482" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+<style>text{white-space:pre;}.fin{opacity:0;animation:fin .5s ease forwards;}@keyframes fin{to{opacity:1;}}@keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}.caret{animation:blink 1.05s step-end infinite;}@media(prefers-reduced-motion:reduce){.fin{opacity:1;animation:none;}.caret{animation:none;}}</style>
+<rect x="0.5" y="0.5" width="859" height="481" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<clipPath id="lightwin"><rect x="0" y="0" width="860" height="482" rx="12"/></clipPath>
+<g clip-path="url(#lightwin)">
+<rect x="0" y="0" width="860" height="34" fill="#e4e4e4"/>
+<circle cx="20" cy="17.0" r="6" fill="#ff5f56"/>
+<circle cx="40" cy="17.0" r="6" fill="#ffbd2e"/>
+<circle cx="60" cy="17.0" r="6" fill="#27c93f"/>
+<text x="430.0" y="21.0" text-anchor="middle" font-size="13" fill="#7a7a7a"><tspan fill="#0000ff">●</tspan> sivab.tsx — sivab193</text>
+<rect x="0" y="34" width="48" height="422" fill="#f3f3f3"/>
+<path d="M17.0 56 h9 l5 5 v13 h-14 z" fill="none" stroke="#0000ff" stroke-width="1.6"/>
+<circle cx="22.0" cy="96" r="6" fill="none" stroke="#616161" stroke-width="1.6"/><line x1="27.0" y1="101" x2="32.0" y2="106" stroke="#616161" stroke-width="1.6"/>
+<g stroke="#616161" stroke-width="1.6" fill="none"><circle cx="19.0" cy="134" r="3"/><circle cx="19.0" cy="152" r="3"/><circle cx="31.0" cy="138" r="3"/><path d="M19.0 137 v12 M19.0 144 q0 -6 8 -6"/></g>
+<rect x="48" y="34" width="812" height="32" fill="#ececec"/>
+<rect x="48" y="34" width="116" height="32" fill="#ffffff"/>
+<rect x="48" y="34" width="116" height="2" fill="#007acc"/>
+<circle cx="62" cy="50.0" r="4" fill="#0000ff"/>
+<text x="72" y="54.0" font-size="12.5" fill="#333333">sivab.tsx</text>
+<text x="150" y="54.0" font-size="12" fill="#7a7a7a">×</text>
+<rect x="164" y="34" width="124" height="32" fill="#e8e8e8"/>
+<circle cx="178" cy="50.0" r="4" fill="#3178c6"/>
+<text x="188" y="54.0" font-size="12.5" fill="#7a7a7a">cuberverse</text>
+<text x="274" y="54.0" font-size="12" fill="#7a7a7a">×</text>
+<rect x="288" y="34" width="140" height="32" fill="#e8e8e8"/>
+<circle cx="302" cy="50.0" r="4" fill="#3178c6"/>
+<text x="312" y="54.0" font-size="12.5" fill="#7a7a7a">homeo-portal</text>
+<text x="414" y="54.0" font-size="12" fill="#7a7a7a">×</text>
+<text class="fin" style="animation-delay:0.35s" x="88" y="92" text-anchor="end" font-size="12.5" fill="#237893">1</text>
+<clipPath id="lightc0"><rect x="100" y="74" width="0" height="22"><animate attributeName="width" begin="0.35s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc0)" x="100" y="92" font-size="14.5"><tspan fill="#0000ff">const </tspan><tspan fill="#0070c1">sivab</tspan><tspan fill="#333333"> = </tspan><tspan fill="#333333">{</tspan></text>
+<text class="fin" style="animation-delay:0.67s" x="88" y="114" text-anchor="end" font-size="12.5" fill="#237893">2</text>
+<clipPath id="lightc1"><rect x="100" y="96" width="0" height="22"><animate attributeName="width" begin="0.67s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc1)" x="100" y="114" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">role</tspan><tspan fill="#333333">: </tspan><tspan fill="#a31515">"Full-Stack · Cloud · Security"</tspan><tspan fill="#333333">,</tspan></text>
+<text class="fin" style="animation-delay:0.99s" x="88" y="136" text-anchor="end" font-size="12.5" fill="#237893">3</text>
+<clipPath id="lightc2"><rect x="100" y="118" width="0" height="22"><animate attributeName="width" begin="0.99s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc2)" x="100" y="136" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">education</tspan><tspan fill="#333333">: </tspan><tspan fill="#a31515">"CS @ Purdue"</tspan><tspan fill="#333333">,</tspan></text>
+<text class="fin" style="animation-delay:1.31s" x="88" y="158" text-anchor="end" font-size="12.5" fill="#237893">4</text>
+<clipPath id="lightc3"><rect x="100" y="140" width="0" height="22"><animate attributeName="width" begin="1.31s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc3)" x="100" y="158" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">repos</tspan><tspan fill="#333333">: </tspan><tspan fill="#098658">57</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">          // owned, non-fork</tspan></text>
+<text class="fin" style="animation-delay:1.63s" x="88" y="180" text-anchor="end" font-size="12.5" fill="#237893">5</text>
+<clipPath id="lightc4"><rect x="100" y="162" width="0" height="22"><animate attributeName="width" begin="1.63s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc4)" x="100" y="180" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">commits</tspan><tspan fill="#333333">: </tspan><tspan fill="#098658">836</tspan><tspan fill="#333333">,</tspan></text>
+<text class="fin" style="animation-delay:1.95s" x="88" y="202" text-anchor="end" font-size="12.5" fill="#237893">6</text>
+<clipPath id="lightc5"><rect x="100" y="184" width="0" height="22"><animate attributeName="width" begin="1.95s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc5)" x="100" y="202" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">linesOfCode</tspan><tspan fill="#333333">: </tspan><tspan fill="#098658">495_852</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">   // net 328_359</tspan></text>
+<text class="fin" style="animation-delay:2.27s" x="88" y="224" text-anchor="end" font-size="12.5" fill="#237893">7</text>
+<clipPath id="lightc6"><rect x="100" y="206" width="0" height="22"><animate attributeName="width" begin="2.27s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc6)" x="100" y="224" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">stack</tspan><tspan fill="#333333">: [</tspan><tspan fill="#a31515">"TypeScript"</tspan><tspan fill="#333333">, </tspan><tspan fill="#a31515">"React"</tspan><tspan fill="#333333">, </tspan><tspan fill="#a31515">"Python"</tspan><tspan fill="#333333">, </tspan><tspan fill="#a31515">"AWS"</tspan><tspan fill="#333333">],</tspan></text>
+<text class="fin" style="animation-delay:2.59s" x="88" y="246" text-anchor="end" font-size="12.5" fill="#237893">8</text>
+<clipPath id="lightc7"><rect x="100" y="228" width="0" height="22"><animate attributeName="width" begin="2.59s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc7)" x="100" y="246" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">latest</tspan><tspan fill="#333333">: </tspan><tspan fill="#a31515">"cuberverse"</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">   // +56 more shipped</tspan></text>
+<text class="fin" style="animation-delay:2.91s" x="88" y="268" text-anchor="end" font-size="12.5" fill="#237893">9</text>
+<clipPath id="lightc8"><rect x="100" y="250" width="0" height="22"><animate attributeName="width" begin="2.91s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc8)" x="100" y="268" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">building</tspan><tspan fill="#333333">: </tspan><tspan fill="#0000ff">true</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">        // always</tspan></text>
+<text class="fin" style="animation-delay:3.23s" x="88" y="290" text-anchor="end" font-size="12.5" fill="#237893">10</text>
+<clipPath id="lightc9"><rect x="100" y="272" width="0" height="22"><animate attributeName="width" begin="3.23s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
+<text clip-path="url(#lightc9)" x="100" y="290" font-size="14.5"><tspan fill="#333333">}</tspan></text>
+<rect class="caret" style="animation-delay:3.55s" x="111" y="278" width="8" height="16" fill="#333333" opacity="0"/>
+<rect x="48" y="318" width="812" height="138" fill="#f8f8f8"/>
+<line x1="48" y1="318" x2="860" y2="318" stroke="#d0d7de" stroke-width="1"/>
+<text x="100" y="338" font-size="11" letter-spacing="0.5" fill="#6a6a6a">PROBLEMS</text>
+<text x="186" y="338" font-size="11" letter-spacing="0.5" fill="#6a6a6a">OUTPUT</text>
+<text x="256" y="338" font-size="11" letter-spacing="0.5" fill="#333333">TERMINAL</text>
+<rect x="256" y="344" width="56" height="1.5" fill="#007acc"/>
+<text x="100" y="364" font-size="12.5" class="fin" style="animation-delay:3.4s"><tspan fill="#0000ff">➜</tspan> <tspan fill="#001080">~</tspan> <tspan fill="#333333">loc --by-language</tspan></text>
+<text x="100" y="384" font-size="11.5" fill="#333333">TypeScript</text>
+<rect x="196" y="372" width="260" height="8" rx="4" fill="#e6e6e6"/>
+<rect x="196" y="372" width="0" height="8" rx="4" fill="#3178c6"><animate attributeName="width" begin="3.70s" dur="0.7s" from="0" to="260" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;260"/></rect>
+<text x="464" y="384" font-size="11" fill="#6a6a6a">51.6%</text>
+<text x="100" y="399" font-size="11.5" fill="#333333">Python</text>
+<rect x="196" y="387" width="260" height="8" rx="4" fill="#e6e6e6"/>
+<rect x="196" y="387" width="0" height="8" rx="4" fill="#3572A5"><animate attributeName="width" begin="3.82s" dur="0.7s" from="0" to="76" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;76"/></rect>
+<text x="464" y="399" font-size="11" fill="#6a6a6a">15.0%</text>
+<text x="100" y="414" font-size="11.5" fill="#333333">JavaScript</text>
+<rect x="196" y="402" width="260" height="8" rx="4" fill="#e6e6e6"/>
+<rect x="196" y="402" width="0" height="8" rx="4" fill="#f1e05a"><animate attributeName="width" begin="3.94s" dur="0.7s" from="0" to="45" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;45"/></rect>
+<text x="464" y="414" font-size="11" fill="#6a6a6a">9.0%</text>
+<text x="100" y="429" font-size="11.5" fill="#333333">C#</text>
+<rect x="196" y="417" width="260" height="8" rx="4" fill="#e6e6e6"/>
+<rect x="196" y="417" width="0" height="8" rx="4" fill="#178600"><animate attributeName="width" begin="4.06s" dur="0.7s" from="0" to="43" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;43"/></rect>
+<text x="464" y="429" font-size="11" fill="#6a6a6a">8.6%</text>
+<text x="100" y="444" font-size="11.5" fill="#333333">HTML</text>
+<rect x="196" y="432" width="260" height="8" rx="4" fill="#e6e6e6"/>
+<rect x="196" y="432" width="0" height="8" rx="4" fill="#e34c26"><animate attributeName="width" begin="4.18s" dur="0.7s" from="0" to="24" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;24"/></rect>
+<text x="464" y="444" font-size="11" fill="#6a6a6a">4.8%</text>
+<text x="610" y="364" font-size="11.5" fill="#6a6a6a"><tspan fill="#007acc" font-size="13">354</tspan> contributions · 1y</text>
+<rect x="610.0" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.70s"/>
+<rect x="617.7" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.73s"/>
+<rect x="625.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.76s"/>
+<rect x="633.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.79s"/>
+<rect x="640.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.82s"/>
+<rect x="648.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.85s"/>
+<rect x="656.0" y="429.1" width="5.7" height="6.9" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.88s"/>
+<rect x="663.7" y="430.9" width="5.7" height="5.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.91s"/>
+<rect x="671.3" y="428.3" width="5.7" height="7.7" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.94s"/>
+<rect x="679.0" y="424.9" width="5.7" height="11.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.97s"/>
+<rect x="686.7" y="414.6" width="5.7" height="21.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.00s"/>
+<rect x="694.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.03s"/>
+<rect x="702.0" y="376.0" width="5.7" height="60.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.06s"/>
+<rect x="709.7" y="428.3" width="5.7" height="7.7" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.09s"/>
+<rect x="717.3" y="432.6" width="5.7" height="3.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.12s"/>
+<rect x="725.0" y="417.1" width="5.7" height="18.9" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.15s"/>
+<rect x="732.7" y="430.9" width="5.7" height="5.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.18s"/>
+<rect x="740.3" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.21s"/>
+<rect x="748.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.24s"/>
+<rect x="755.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.27s"/>
+<rect x="763.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.30s"/>
+<rect x="771.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.33s"/>
+<rect x="778.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.36s"/>
+<rect x="786.3" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.39s"/>
+<rect x="794.0" y="424.9" width="5.7" height="11.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.42s"/>
+<rect x="801.7" y="418.9" width="5.7" height="17.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.45s"/>
+<rect x="809.3" y="429.1" width="5.7" height="6.9" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.48s"/>
+<rect x="817.0" y="423.1" width="5.7" height="12.9" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.51s"/>
+<rect x="824.7" y="399.1" width="5.7" height="36.9" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.54s"/>
+<rect x="832.3" y="419.7" width="5.7" height="16.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
+</g>
+<g clip-path="url(#lightwin)">
+<rect x="0" y="456" width="860" height="38" fill="#007acc"/>
+<text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 495,852 LOC   TypeScript   354 contribs   ⟳ updated Jul 13</text>
+</g>
+</svg>
