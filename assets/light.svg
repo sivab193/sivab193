@@ -85,40 +85,40 @@
 <rect x="196" y="432" width="0" height="8" rx="4" fill="#663399"><animate attributeName="width" begin="4.18s" dur="0.7s" from="0" to="17" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;17"/></rect>
 <text x="464" y="444" font-size="11" fill="#6a6a6a">3.9%</text>
 <text x="610" y="364" font-size="11.5" fill="#6a6a6a"><tspan fill="#007acc" font-size="13">343</tspan> contributions · 1y</text>
-<rect x="610.0" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.70s"/>
-<rect x="617.7" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.73s"/>
+<rect x="610.0" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.70s"/>
+<rect x="617.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.73s"/>
 <rect x="625.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.76s"/>
 <rect x="633.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.79s"/>
 <rect x="640.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.82s"/>
-<rect x="648.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.85s"/>
-<rect x="656.0" y="429.0" width="5.7" height="7.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.88s"/>
-<rect x="663.7" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.91s"/>
-<rect x="671.3" y="428.2" width="5.7" height="7.8" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.94s"/>
-<rect x="679.0" y="424.7" width="5.7" height="11.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.97s"/>
-<rect x="686.7" y="418.6" width="5.7" height="17.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.00s"/>
-<rect x="694.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.03s"/>
-<rect x="702.0" y="376.0" width="5.7" height="60.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.06s"/>
-<rect x="709.7" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.09s"/>
-<rect x="717.3" y="432.5" width="5.7" height="3.5" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.12s"/>
-<rect x="725.0" y="416.9" width="5.7" height="19.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.15s"/>
-<rect x="732.7" y="430.8" width="5.7" height="5.2" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.18s"/>
-<rect x="740.3" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.21s"/>
+<rect x="648.3" y="429.0" width="5.7" height="7.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.85s"/>
+<rect x="656.0" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.88s"/>
+<rect x="663.7" y="428.2" width="5.7" height="7.8" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.91s"/>
+<rect x="671.3" y="424.7" width="5.7" height="11.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.94s"/>
+<rect x="679.0" y="418.6" width="5.7" height="17.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.97s"/>
+<rect x="686.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.00s"/>
+<rect x="694.3" y="376.0" width="5.7" height="60.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.03s"/>
+<rect x="702.0" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.06s"/>
+<rect x="709.7" y="432.5" width="5.7" height="3.5" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.09s"/>
+<rect x="717.3" y="416.9" width="5.7" height="19.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.12s"/>
+<rect x="725.0" y="430.8" width="5.7" height="5.2" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.15s"/>
+<rect x="732.7" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.18s"/>
+<rect x="740.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.21s"/>
 <rect x="748.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.24s"/>
 <rect x="755.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.27s"/>
 <rect x="763.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.30s"/>
 <rect x="771.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.33s"/>
-<rect x="778.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.36s"/>
-<rect x="786.3" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.39s"/>
+<rect x="778.7" y="433.4" width="5.7" height="2.6" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.36s"/>
+<rect x="786.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.39s"/>
 <rect x="794.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.42s"/>
-<rect x="801.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.45s"/>
-<rect x="809.3" y="429.9" width="5.7" height="6.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.48s"/>
-<rect x="817.0" y="423.0" width="5.7" height="13.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.51s"/>
-<rect x="824.7" y="407.3" width="5.7" height="28.7" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.54s"/>
-<rect x="832.3" y="378.6" width="5.7" height="57.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
+<rect x="801.7" y="429.9" width="5.7" height="6.1" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.45s"/>
+<rect x="809.3" y="423.0" width="5.7" height="13.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.48s"/>
+<rect x="817.0" y="407.3" width="5.7" height="28.7" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.51s"/>
+<rect x="824.7" y="378.6" width="5.7" height="57.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.54s"/>
+<rect x="832.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
 </g>
 <g clip-path="url(#lightwin)">
 <rect x="0" y="456" width="860" height="38" fill="#007acc"/>
 <text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
-<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 436,538 LOC   TypeScript   343 contribs   ⟳ updated Jul 18</text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 436,538 LOC   TypeScript   343 contribs   ⟳ updated Jul 19</text>
 </g>
 </svg>
