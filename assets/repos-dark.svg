@@ -34,5 +34,5 @@
 <rect x="214" y="226.5" width="528" height="15" rx="7.5" fill="#2a2d2e"/>
 <rect x="214" y="226.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.96s" dur="0.8s" from="0" to="160" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;160"/></rect>
 <text x="836" y="239" text-anchor="end" font-size="13" fill="#9cdcfe" class="fin" style="animation-delay:1.46s">26,920</text>
-<text x="24" y="282" font-size="12" fill="#6a9955"># 44 repositories · 436,538 lines written · net 280,506</text>
+<text x="24" y="282" font-size="12" fill="#6a9955"># 45 repositories · 445,291 lines written · net 289,259</text>
 </g></svg>
