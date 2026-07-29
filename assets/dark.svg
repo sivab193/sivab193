@@ -84,7 +84,7 @@
 <rect x="196" y="432" width="260" height="8" rx="4" fill="#2a2d2e"/>
 <rect x="196" y="432" width="0" height="8" rx="4" fill="#663399"><animate attributeName="width" begin="4.18s" dur="0.7s" from="0" to="17" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;17"/></rect>
 <text x="464" y="444" font-size="11" fill="#9d9d9d">3.9%</text>
-<text x="610" y="364" font-size="11.5" fill="#9d9d9d"><tspan fill="#007acc" font-size="13">363</tspan> contributions · 1y</text>
+<text x="610" y="364" font-size="11.5" fill="#9d9d9d"><tspan fill="#007acc" font-size="13">368</tspan> contributions · 1y</text>
 <rect x="610.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.70s"/>
 <rect x="617.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.73s"/>
 <rect x="625.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.76s"/>
@@ -114,11 +114,11 @@
 <rect x="809.3" y="407.3" width="5.7" height="28.7" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.48s"/>
 <rect x="817.0" y="378.6" width="5.7" height="57.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.51s"/>
 <rect x="824.7" y="418.6" width="5.7" height="17.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.54s"/>
-<rect x="832.3" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
+<rect x="832.3" y="431.7" width="5.7" height="4.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
 </g>
 <g clip-path="url(#darkwin)">
 <rect x="0" y="456" width="860" height="38" fill="#007acc"/>
 <text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
-<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 455,597 LOC   TypeScript   363 contribs   ⟳ updated Jul 28</text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 455,597 LOC   TypeScript   368 contribs   ⟳ updated Jul 29</text>
 </g>
 </svg>
