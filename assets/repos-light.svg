@@ -13,26 +13,26 @@
 <text x="44" y="95" font-size="13.5" fill="#333333">cloudclip</text>
 <rect x="214" y="82.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
 <rect x="214" y="82.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.40s" dur="0.8s" from="0" to="528" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;528"/></rect>
-<text x="836" y="95" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">88,590</text>
+<text x="836" y="95" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">90,492</text>
 <text x="24" y="131" font-size="13" fill="#237893">2</text>
 <text x="44" y="131" font-size="13.5" fill="#333333">citybus-tracker</text>
 <rect x="214" y="118.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="214" y="118.5" width="0" height="15" rx="7.5" fill="#3572A5"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="353" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;353"/></rect>
+<rect x="214" y="118.5" width="0" height="15" rx="7.5" fill="#3572A5"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="346" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;346"/></rect>
 <text x="836" y="131" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.04s">59,218</text>
 <text x="24" y="167" font-size="13" fill="#237893">3</text>
 <text x="44" y="167" font-size="13.5" fill="#333333">movies-tracker</text>
 <rect x="214" y="154.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="214" y="154.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="246" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;246"/></rect>
-<text x="836" y="167" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">41,347</text>
+<rect x="214" y="154.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="284" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;284"/></rect>
+<text x="836" y="167" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">48,619</text>
 <text x="24" y="203" font-size="13" fill="#237893">4</text>
 <text x="44" y="203" font-size="13.5" fill="#333333">event-reminder</text>
 <rect x="214" y="190.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="214" y="190.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="193" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;193"/></rect>
+<rect x="214" y="190.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="189" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;189"/></rect>
 <text x="836" y="203" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.32s">32,441</text>
 <text x="24" y="239" font-size="13" fill="#237893">5</text>
 <text x="44" y="239" font-size="13.5" fill="#333333">cuberverse</text>
 <rect x="214" y="226.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="214" y="226.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.96s" dur="0.8s" from="0" to="160" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;160"/></rect>
+<rect x="214" y="226.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.96s" dur="0.8s" from="0" to="157" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;157"/></rect>
 <text x="836" y="239" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.46s">26,920</text>
-<text x="24" y="282" font-size="12" fill="#008000"># 46 repositories · 478,056 lines written · net 319,611</text>
+<text x="24" y="282" font-size="12" fill="#008000"># 47 repositories · 496,654 lines written · net 336,822</text>
 </g></svg>
