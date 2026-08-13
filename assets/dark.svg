@@ -40,10 +40,10 @@
 <text clip-path="url(#darkc3)" x="100" y="158" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">repos</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">49</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">          // owned, non-fork</tspan></text>
 <text class="fin" style="animation-delay:1.63s" x="88" y="180" text-anchor="end" font-size="12.5" fill="#858585">5</text>
 <clipPath id="darkc4"><rect x="100" y="162" width="0" height="22"><animate attributeName="width" begin="1.63s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
-<text clip-path="url(#darkc4)" x="100" y="180" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">commits</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">559</tspan><tspan fill="#d4d4d4">,</tspan></text>
+<text clip-path="url(#darkc4)" x="100" y="180" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">commits</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">560</tspan><tspan fill="#d4d4d4">,</tspan></text>
 <text class="fin" style="animation-delay:1.95s" x="88" y="202" text-anchor="end" font-size="12.5" fill="#858585">6</text>
 <clipPath id="darkc5"><rect x="100" y="184" width="0" height="22"><animate attributeName="width" begin="1.95s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
-<text clip-path="url(#darkc5)" x="100" y="202" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">linesOfCode</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">515_010</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">   // net 354_305</tspan></text>
+<text clip-path="url(#darkc5)" x="100" y="202" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">linesOfCode</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">515_475</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">   // net 354_762</tspan></text>
 <text class="fin" style="animation-delay:2.27s" x="88" y="224" text-anchor="end" font-size="12.5" fill="#858585">7</text>
 <clipPath id="darkc6"><rect x="100" y="206" width="0" height="22"><animate attributeName="width" begin="2.27s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#darkc6)" x="100" y="224" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">stack</tspan><tspan fill="#d4d4d4">: [</tspan><tspan fill="#ce9178">"TypeScript"</tspan><tspan fill="#d4d4d4">, </tspan><tspan fill="#ce9178">"React"</tspan><tspan fill="#d4d4d4">, </tspan><tspan fill="#ce9178">"Python"</tspan><tspan fill="#d4d4d4">, </tspan><tspan fill="#ce9178">"AWS"</tspan><tspan fill="#d4d4d4">],</tspan></text>
@@ -84,7 +84,7 @@
 <rect x="196" y="432" width="260" height="8" rx="4" fill="#2a2d2e"/>
 <rect x="196" y="432" width="0" height="8" rx="4" fill="#663399"><animate attributeName="width" begin="4.18s" dur="0.7s" from="0" to="16" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1" keyTimes="0;1" values="0;16"/></rect>
 <text x="464" y="444" font-size="11" fill="#9d9d9d">3.4%</text>
-<text x="610" y="364" font-size="11.5" fill="#9d9d9d"><tspan fill="#007acc" font-size="13">440</tspan> contributions · 1y</text>
+<text x="610" y="364" font-size="11.5" fill="#9d9d9d"><tspan fill="#007acc" font-size="13">441</tspan> contributions · 1y</text>
 <rect x="610.0" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.70s"/>
 <rect x="617.7" y="434.0" width="5.7" height="2.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.73s"/>
 <rect x="625.3" y="429.0" width="5.7" height="7.0" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:3.76s"/>
@@ -114,11 +114,11 @@
 <rect x="809.3" y="418.6" width="5.7" height="17.4" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.48s"/>
 <rect x="817.0" y="421.2" width="5.7" height="14.8" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.51s"/>
 <rect x="824.7" y="391.7" width="5.7" height="44.3" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.54s"/>
-<rect x="832.3" y="428.2" width="5.7" height="7.8" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
+<rect x="832.3" y="427.3" width="5.7" height="8.7" rx="1.5" fill="#007acc" opacity="0" class="fin" style="animation-delay:4.57s"/>
 </g>
 <g clip-path="url(#darkwin)">
 <rect x="0" y="456" width="860" height="38" fill="#007acc"/>
 <text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
-<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 515,010 LOC   TypeScript   440 contribs   ⟳ updated Aug 12</text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 515,475 LOC   TypeScript   441 contribs   ⟳ updated Aug 13</text>
 </g>
 </svg>
