@@ -17,8 +17,8 @@
 <text x="24" y="131" font-size="13" fill="#237893">2</text>
 <text x="44" y="131" font-size="13.5" fill="#333333">movies-tracker</text>
 <rect x="214" y="118.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="214" y="118.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="382" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;382"/></rect>
-<text x="836" y="131" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.04s">65,516</text>
+<rect x="214" y="118.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="383" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;383"/></rect>
+<text x="836" y="131" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.04s">65,583</text>
 <text x="24" y="167" font-size="13" fill="#237893">3</text>
 <text x="44" y="167" font-size="13.5" fill="#333333">citybus-tracker</text>
 <rect x="214" y="154.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
@@ -34,5 +34,5 @@
 <rect x="214" y="226.5" width="528" height="15" rx="7.5" fill="#e6e6e6"/>
 <rect x="214" y="226.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.96s" dur="0.8s" from="0" to="158" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;158"/></rect>
 <text x="836" y="239" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.46s">27,014</text>
-<text x="24" y="282" font-size="12" fill="#008000"># 52 repositories · 563,531 lines written · net 379,674</text>
+<text x="24" y="282" font-size="12" fill="#008000"># 52 repositories · 579,806 lines written · net 385,333</text>
 </g></svg>
