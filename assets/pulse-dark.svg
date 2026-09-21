@@ -41,7 +41,7 @@
 <line x1="26" y1="196" x2="834" y2="196" stroke="#1b2129" stroke-width="1"/>
 <line x1="26" y1="226" x2="834" y2="226" stroke="#1b2129" stroke-width="1"/>
 <line x1="26" y1="174" x2="834" y2="174" stroke="#30363d" stroke-width="1" stroke-dasharray="2 4"/>
-<text x="26" y="62" font-size="30" font-weight="700" fill="#3fb950" class="fin" style="animation-delay:.2s">601</text>
+<text x="26" y="62" font-size="30" font-weight="700" fill="#3fb950" class="fin" style="animation-delay:.2s">598</text>
 <text x="26" y="78" font-size="11" letter-spacing="1.5" fill="#7d8792" class="fin" style="animation-delay:.2s">CONTRIBUTIONS · 53 WEEKS</text>
 <text x="834" y="50" text-anchor="end" font-size="13" fill="#c9d1d9" class="fin" style="animation-delay:.5s"><tspan fill="#3fb950">♥</tspan> 0-day streak</text>
 <text x="834" y="70" text-anchor="end" font-size="13" fill="#c9d1d9" class="fin" style="animation-delay:.7s"><tspan fill="#3fb950">◆</tspan> peak 51/day</text>
