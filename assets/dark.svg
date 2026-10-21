@@ -40,7 +40,7 @@
 <text clip-path="url(#darkc3)" x="100" y="158" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">repos</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">58</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">          // owned, non-fork</tspan></text>
 <text class="fin" style="animation-delay:1.63s" x="88" y="180" text-anchor="end" font-size="12.5" fill="#858585">5</text>
 <clipPath id="darkc4"><rect x="100" y="162" width="0" height="22"><animate attributeName="width" begin="1.63s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
-<text clip-path="url(#darkc4)" x="100" y="180" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">commits</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">753</tspan><tspan fill="#d4d4d4">,</tspan></text>
+<text clip-path="url(#darkc4)" x="100" y="180" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">commits</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">809</tspan><tspan fill="#d4d4d4">,</tspan></text>
 <text class="fin" style="animation-delay:1.95s" x="88" y="202" text-anchor="end" font-size="12.5" fill="#858585">6</text>
 <clipPath id="darkc5"><rect x="100" y="184" width="0" height="22"><animate attributeName="width" begin="1.95s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#darkc5)" x="100" y="202" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">linesOfCode</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#b5cea8">692_603</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">   // net 471_984</tspan></text>
@@ -119,6 +119,6 @@
 <g clip-path="url(#darkwin)">
 <rect x="0" y="456" width="860" height="38" fill="#007acc"/>
 <text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
-<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 692,603 LOC   TypeScript   712 contribs   ⟳ updated Oct 20</text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 692,603 LOC   TypeScript   712 contribs   ⟳ updated Oct 21</text>
 </g>
 </svg>
