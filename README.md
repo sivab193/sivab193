@@ -51,13 +51,15 @@ Currently focused on building Aayvu, with the US co-founder and India co-founder
 </p>
 
 <!-- ORGS-START -->
-<!-- Orgs by lines of code will be generated here daily by .github/scripts/generate.py -->
+_No org repos with authored lines found on the last run. Check that GH_PAT has `read:org` scope and is authorised for those orgs._
 <!-- ORGS-END -->
 
 ### 🔒 Private builds — named, code stays private
 
 <!-- PRIVATE-START -->
-<!-- Private repos you contributed to will be listed here daily by .github/scripts/generate.py. Names only, no links, code stays private. -->
+_No private repos with authored lines found on the last run._
+
+_Names only, no links. Code stays private. Restricted (private) contributions in this period: 120._
 <!-- PRIVATE-END -->
 
 ---
