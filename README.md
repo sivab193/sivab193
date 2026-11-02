@@ -34,8 +34,6 @@
 
 **Aayvu** ([aayvu.io](https://aayvu.io/)) is an AI-powered survey platform, deeper than SurveyMonkey: complex branching and automation under the hood, in the spirit of Qualtrics.
 
-Currently focused on building Aayvu, with the US co-founder and India co-founder team. Stack: AWS LLM APIs plus other free-tier models, deployed on Zoho Catalyst.
-
 ---
 
 ## 📊 Biggest Builds — by lines of code
