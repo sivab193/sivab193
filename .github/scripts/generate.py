@@ -15,6 +15,7 @@ Run from the repository root:  python .github/scripts/generate.py
 """
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -85,6 +86,7 @@ query($login:String!){
   user(login:$login){
     name login createdAt
     followers{totalCount}
+    organizations(first:50){ nodes{ login } }
     contributionsCollection{
       totalCommitContributions restrictedContributionsCount
       contributionCalendar{ totalContributions weeks{ contributionDays{ contributionCount date } } }
@@ -96,6 +98,21 @@ REPOS_Q = """
 query($login:String!,$cursor:String){
   user(login:$login){
     repositories(first:50,after:$cursor,ownerAffiliations:OWNER,isFork:false,orderBy:{field:PUSHED_AT,direction:DESC}){
+      pageInfo{hasNextPage endCursor}
+      nodes{
+        name isPrivate description url homepageUrl stargazerCount pushedAt
+        primaryLanguage{name color}
+        languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}
+        defaultBranchRef{name}
+      }
+    }
+  }
+}"""
+
+ORG_REPOS_Q = """
+query($login:String!,$cursor:String){
+  organization(login:$login){
+    repositories(first:50,after:$cursor,isFork:false,orderBy:{field:PUSHED_AT,direction:DESC}){
       pageInfo{hasNextPage endCursor}
       nodes{
         name isPrivate description url homepageUrl stargazerCount pushedAt
@@ -120,6 +137,30 @@ query($owner:String!,$name:String!,$id:ID!,$cursor:String){
 }"""
 
 
+def count_loc(owner, repos, viewer_id):
+    """Set loc_add per repo and return (additions, deletions) authored by viewer."""
+    add = dl = 0
+    for r in repos:
+        r["loc_add"] = 0
+        r["owner_login"] = owner
+        if not r.get("defaultBranchRef"):
+            continue
+        cur = None
+        for _ in range(12):  # cap 1200 commits/repo
+            rd = gql(LOC_Q, {"owner": owner, "name": r["name"], "id": viewer_id, "cursor": cur})
+            h = (((rd.get("repository") or {}).get("defaultBranchRef") or {}).get("target") or {}).get("history")
+            if not h:
+                break
+            for n in h["nodes"]:
+                add += n["additions"]
+                dl += n["deletions"]
+                r["loc_add"] += n["additions"]
+            if not h["pageInfo"]["hasNextPage"]:
+                break
+            cur = h["pageInfo"]["endCursor"]
+    return add, dl
+
+
 def fetch():
     sys.stderr.write("fetching user + contributions\n")
     u = gql(USER_Q, {"login": LOGIN})
@@ -136,28 +177,66 @@ def fetch():
         cursor = d["pageInfo"]["endCursor"]
 
     sys.stderr.write(f"counting lines of code across {len(repos)} repos\n")
-    add = dl = 0
-    for r in repos:
-        r["loc_add"] = 0
-        if not r.get("defaultBranchRef"):
+    add, dl = count_loc(LOGIN, repos, viewer_id)
+
+    # ---- organisations: all orgs the user belongs to, counted the same way ----
+    # Only repos with authored lines are ever listed, so org repos the user
+    # did not contribute to are never named. Requires GH_PAT with read:org.
+    org_logins = []
+    try:
+        org_logins = [n["login"] for n in (user.get("organizations") or {}).get("nodes") or [] if n.get("login")]
+    except Exception:
+        org_logins = []
+    org_repos = []
+    org_totals = {}
+    for org in org_logins:
+        sys.stderr.write(f"fetching organisation {org}\n")
+        oreps, cursor = [], None
+        try:
+            while True:
+                d = gql(ORG_REPOS_Q, {"login": org, "cursor": cursor})
+                org_data = (d or {}).get("organization") or {}
+                page = org_data.get("repositories") or {}
+                oreps += page.get("nodes") or []
+                if not (page.get("pageInfo") or {}).get("hasNextPage"):
+                    break
+                cursor = (page.get("pageInfo") or {}).get("endCursor")
+        except Exception as e:
+            sys.stderr.write(f"org {org} skipped: {e}\n")
             continue
-        cur = None
-        for _ in range(12):  # cap 1200 commits/repo
-            rd = gql(LOC_Q, {"owner": LOGIN, "name": r["name"], "id": viewer_id, "cursor": cur})
-            h = (((rd.get("repository") or {}).get("defaultBranchRef") or {}).get("target") or {}).get("history")
-            if not h:
-                break
-            for n in h["nodes"]:
-                add += n["additions"]
-                dl += n["deletions"]
-                r["loc_add"] += n["additions"]
-            if not h["pageInfo"]["hasNextPage"]:
-                break
-            cur = h["pageInfo"]["endCursor"]
+        for r in oreps:
+            r["org"] = org
+        o_add, o_dl = count_loc(org, oreps, viewer_id)
+        add += o_add
+        dl += o_dl
+        org_repos += oreps
+        contributed = [r for r in oreps if r.get("loc_add", 0) > 0]
+        if contributed:
+            org_totals[org] = {
+                "repos": len(contributed),
+                "add": sum(r["loc_add"] for r in contributed),
+                "top": max(contributed, key=lambda r: r["loc_add"])["name"],
+            }
+
+    # ---- private repos, named only when the user authored lines there ----
+    # The user confirmed on 2026-11-01 that private names may be published
+    # in this public profile README. Names only, no links: code stays private.
+    private_repos = []
+    for r in repos + org_repos:
+        if r.get("isPrivate") and r.get("loc_add", 0) > 0:
+            private_repos.append({
+                "owner": r.get("owner_login") or LOGIN,
+                "name": r["name"],
+                "add": r["loc_add"],
+            })
+    private_repos.sort(key=lambda x: x["add"], reverse=True)
 
     return {
         "user": user,
         "repos": repos,
+        "org_repos": org_repos,
+        "org_totals": org_totals,
+        "private_repos": private_repos,
         "totals": {
             "add": add,
             "del": dl,
@@ -254,7 +333,7 @@ def render(theme_name, data):
     commits_txt = fmt(commits).replace(",", "_") if isinstance(commits, int) else str(commits)
     lines = [
         [("kw", "const "), ("var", "sivab"), ("pun", " = "), ("pun", "{")],
-        [("t", "  "), ("prop", "role"), ("pun", ": "), ("str", '"Full-Stack · Cloud · Security"'), ("pun", ",")],
+        [("t", "  "), ("prop", "role"), ("pun", ": "), ("str", '"Building Aayvu · Full-Stack"'), ("pun", ",")],
         [("t", "  "), ("prop", "education"), ("pun", ": "), ("str", '"CS @ Purdue"'), ("pun", ",")],
         [("t", "  "), ("prop", "repos"), ("pun", ": "), ("num", str(repo_count)), ("pun", ","), ("com", "          // owned, non-fork")],
         [("t", "  "), ("prop", "commits"), ("pun", ": "), ("num", commits_txt), ("pun", ",")],
@@ -570,6 +649,42 @@ def render_pulse(theme_name, data):
     return "\n".join(p)
 
 
+def update_readme(data):
+    """Fill the ORGS and PRIVATE sections of README.md between markers."""
+    readme_path = os.path.join(ROOT, "README.md")
+    if not os.path.exists(readme_path):
+        return
+    text = open(readme_path, encoding="utf-8").read()
+    cc = data["user"]["contributionsCollection"]
+    restricted = cc.get("restrictedContributionsCount")
+
+    org_totals = data.get("org_totals") or {}
+    if org_totals:
+        rows = ["| Organisation | Repos you contributed to | Lines written | Top repo |",
+                "| --- | ---: | ---: | --- |"]
+        for org, v in sorted(org_totals.items(), key=lambda kv: kv[1]["add"], reverse=True):
+            rows.append(f"| {org} | {v['repos']} | {fmt(v['add'])} | `{v['top']}` |")
+        org_body = "\n".join(rows)
+    else:
+        org_body = ("_No org repos with authored lines found on the last run. "
+                    "Check that GH_PAT has `read:org` scope and is authorised for those orgs._")
+    org_section = f"<!-- ORGS-START -->\n{org_body}\n<!-- ORGS-END -->"
+    text, n1 = re.subn(r"<!-- ORGS-START -->.*?<!-- ORGS-END -->", org_section, text, flags=re.S)
+
+    priv = data.get("private_repos") or []
+    if priv:
+        lines = [f"- `{r['owner']}/{r['name']}` — {fmt(r['add'])} lines written" for r in priv]
+        priv_body = "\n".join(lines)
+    else:
+        priv_body = "_No private repos with authored lines found on the last run._"
+    priv_body += f"\n\n_Names only, no links. Code stays private. Restricted (private) contributions in this period: {restricted}._"
+    priv_section = f"<!-- PRIVATE-START -->\n{priv_body}\n<!-- PRIVATE-END -->"
+    text, n2 = re.subn(r"<!-- PRIVATE-START -->.*?<!-- PRIVATE-END -->", priv_section, text, flags=re.S)
+
+    if n1 or n2:
+        open(readme_path, "w", encoding="utf-8").write(text)
+
+
 def main():
     data = fetch()
     T = data["totals"]
@@ -581,9 +696,11 @@ def main():
             f.write(render_repos(theme, data))
         with open(os.path.join(ROOT, "assets", f"pulse-{theme}.svg"), "w", encoding="utf-8") as f:
             f.write(render_pulse(theme, data))
+    update_readme(data)
     sys.stderr.write(
         f"done: +{T['add']:,} / -{T['del']:,} net {T['net']:,} | "
-        f"{T['commits_all_time']} commits | {T['repo_count']} repos\n"
+        f"{T['commits_all_time']} commits | {T['repo_count']} repos | "
+        f"{len(data.get('org_totals') or {})} orgs | {len(data.get('private_repos') or [])} private repos named\n"
     )
 
 

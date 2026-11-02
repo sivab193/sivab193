@@ -1,9 +1,10 @@
 <!-- HEADER -->
 <h1 align="center">Hi 👋, I'm Sivaganesh</h1>
-<h3 align="center">Full-Stack • Cloud • Security • Research</h3>
+<h3 align="center">Building Aayvu • Full-Stack • Cloud • Security</h3>
 
 <p align="center">
   <a href="https://siv19.dev/">🌐 Website</a> •
+  <a href="https://aayvu.io/">🚀 Aayvu</a> •
   <a href="https://linkedin.com/in/sivab193">💼 LinkedIn</a> •
   <a href="https://github.com/sivab193">🐙 GitHub</a> •
   <a href="https://ieeexplore.ieee.org/author/37089725626">📄 IEEE</a> •
@@ -29,6 +30,14 @@
 
 ---
 
+## 🚀 Currently Building: Aayvu
+
+**Aayvu** ([aayvu.io](https://aayvu.io/)) is an AI-powered survey platform, deeper than SurveyMonkey: complex branching and automation under the hood, in the spirit of Qualtrics.
+
+Currently focused on building Aayvu, with the US co-founder and India co-founder team. Stack: AWS LLM APIs plus other free-tier models, deployed on Zoho Catalyst.
+
+---
+
 ## 📊 Biggest Builds — by lines of code
 
 <p align="center">
@@ -41,10 +50,21 @@
   </a>
 </p>
 
+<!-- ORGS-START -->
+<!-- Orgs by lines of code will be generated here daily by .github/scripts/generate.py -->
+<!-- ORGS-END -->
+
+### 🔒 Private builds — named, code stays private
+
+<!-- PRIVATE-START -->
+<!-- Private repos you contributed to will be listed here daily by .github/scripts/generate.py. Names only, no links, code stays private. -->
+<!-- PRIVATE-END -->
+
 ---
 
 ## 🧠 What I'm Working On
 
+- 🚀 Aayvu — AI survey programming: branching, automation, and LLM-powered survey building
 - ☁️ Cloud & distributed systems — self-hosted infra, API gateways, real-time trackers
 - 🔐 Security & authentication — passkeys, replay-attack detection, secure gateways
 - 📱 Full-stack & mobile — Next.js / React Native products, shipped end-to-end
@@ -68,4 +88,4 @@
 
 ## 🤝 Let's Connect
 
-💼 Open to internships & SWE opportunities &nbsp;·&nbsp; 📬 Best reached on [LinkedIn](https://linkedin.com/in/sivab193) or [contact@siv19.dev](mailto:contact@siv19.dev)
+🚀 Building Aayvu full focus — not looking for internships or SWE roles right now. &nbsp;·&nbsp; 📬 Best reached on [LinkedIn](https://linkedin.com/in/sivab193), [contact@siv19.dev](mailto:contact@siv19.dev), or via [aayvu.io](https://aayvu.io/)
