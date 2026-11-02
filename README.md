@@ -66,7 +66,15 @@ _Names only, no links. Code stays private. Restricted (private) contributions in
 
 ## 🧠 What I'm Working On
 
-- 🚀 Aayvu — AI survey programming: branching, automation, and LLM-powered survey building
+**Main builds:**
+
+- 🚀 [Aayvu](https://aayvu.io/) — AI-powered survey programming: branching, automation, and LLM-powered survey building
+- 🎬 [MediaVerse](https://www.media-verse.in/) — full-stack movie tracker with watch-time leaderboards and theater check-ins
+- 📋 [CloudClip](https://www.cclip.cc/) — a quieter way to move text, encrypted before it leaves the browser
+- 💸 [SplitLLM](https://splitllm.com/) — scan receipts, split expenses with friends, and settle up, with receipt-reading AI
+
+**Also:**
+
 - ☁️ Cloud & distributed systems — self-hosted infra, API gateways, real-time trackers
 - 🔐 Security & authentication — passkeys, replay-attack detection, secure gateways
 - 📱 Full-stack & mobile — Next.js / React Native products, shipped end-to-end
@@ -90,4 +98,4 @@ _Names only, no links. Code stays private. Restricted (private) contributions in
 
 ## 🤝 Let's Connect
 
-🚀 Building Aayvu full focus — not looking for internships or SWE roles right now. &nbsp;·&nbsp; 📬 Best reached on [LinkedIn](https://linkedin.com/in/sivab193), [contact@siv19.dev](mailto:contact@siv19.dev), or via [aayvu.io](https://aayvu.io/)
+🚀 Building Aayvu &nbsp;·&nbsp; 📬 Best reached on [LinkedIn](https://linkedin.com/in/sivab193) or [contact@siv19.dev](mailto:contact@siv19.dev)
