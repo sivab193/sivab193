@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="284" viewBox="0 0 860 284" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+<style>text{white-space:pre;}.fin{opacity:0;animation:rfin .5s ease forwards;}@keyframes rfin{to{opacity:1;}}@media(prefers-reduced-motion:reduce){.fin{opacity:1;animation:none;}}</style>
+<rect x="0.5" y="0.5" width="859" height="283" rx="12" fill="#1e1e1e" stroke="#0d1117"/>
+<clipPath id="darkowin"><rect x="0" y="0" width="860" height="284" rx="12"/></clipPath>
+<g clip-path="url(#darkowin)">
+<rect x="0" y="0" width="860" height="34" fill="#323233"/>
+<circle cx="20" cy="17.0" r="6" fill="#ff5f56"/>
+<circle cx="40" cy="17.0" r="6" fill="#ffbd2e"/>
+<circle cx="60" cy="17.0" r="6" fill="#27c93f"/>
+<text x="430.0" y="21.0" text-anchor="middle" font-size="13" fill="#8a8a8a">orgs — lines of code by organisation</text>
+<text x="24" y="64" font-size="13" class="fin" style="animation-delay:.15s"><tspan fill="#569cd6">➜</tspan>  <tspan fill="#9cdcfe">~</tspan>  <tspan fill="#d4d4d4">orgs --sort lines</tspan></text>
+<text x="44" y="94" font-size="11" fill="#6a9955">organisation</text>
+<text x="452" y="94" font-size="11" fill="#6a9955">repos</text>
+<text x="560" y="94" font-size="11" fill="#6a9955">lines</text>
+<text x="680" y="94" font-size="11" fill="#6a9955">top repo</text>
+<text x="24" y="117" font-size="13" fill="#858585">1</text>
+<text x="44" y="117" font-size="13.5" fill="#d4d4d4">SurveyBuilderLLM</text>
+<rect x="236" y="104.5" width="200" height="15" rx="7.5" fill="#2a2d2e"/>
+<rect x="236" y="104.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.40s" dur="0.8s" from="0" to="200" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;200"/></rect>
+<text x="452" y="117" font-size="13" fill="#d4d4d4">11</text>
+<text x="560" y="117" font-size="13" fill="#9cdcfe" class="fin" style="animation-delay:0.90s">207,965</text>
+<text x="680" y="117" font-size="13" fill="#d4d4d4">app</text>
+<text x="24" y="153" font-size="13" fill="#858585">2</text>
+<text x="44" y="153" font-size="13.5" fill="#d4d4d4">splitllmbill</text>
+<rect x="236" y="140.5" width="200" height="15" rx="7.5" fill="#2a2d2e"/>
+<rect x="236" y="140.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="75" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;75"/></rect>
+<text x="452" y="153" font-size="13" fill="#d4d4d4">8</text>
+<text x="560" y="153" font-size="13" fill="#9cdcfe" class="fin" style="animation-delay:1.04s">78,479</text>
+<text x="680" y="153" font-size="13" fill="#d4d4d4">flutter-app</text>
+<text x="24" y="189" font-size="13" fill="#858585">3</text>
+<text x="44" y="189" font-size="13.5" fill="#d4d4d4">ChennaiRun</text>
+<rect x="236" y="176.5" width="200" height="15" rx="7.5" fill="#2a2d2e"/>
+<rect x="236" y="176.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="23" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;23"/></rect>
+<text x="452" y="189" font-size="13" fill="#d4d4d4">2</text>
+<text x="560" y="189" font-size="13" fill="#9cdcfe" class="fin" style="animation-delay:1.18s">24,028</text>
+<text x="680" y="189" font-size="13" fill="#d4d4d4">terra</text>
+<text x="24" y="225" font-size="13" fill="#858585">4</text>
+<text x="44" y="225" font-size="13.5" fill="#d4d4d4">TerravaMap</text>
+<rect x="236" y="212.5" width="200" height="15" rx="7.5" fill="#2a2d2e"/>
+<rect x="236" y="212.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="14" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;14"/></rect>
+<text x="452" y="225" font-size="13" fill="#d4d4d4">1</text>
+<text x="560" y="225" font-size="13" fill="#9cdcfe" class="fin" style="animation-delay:1.32s">14,850</text>
+<text x="680" y="225" font-size="13" fill="#d4d4d4">app</text>
+<text x="24" y="268" font-size="12" fill="#6a9955"># 4 organisations · 325,322 lines written</text>
+</g></svg>
