@@ -474,26 +474,35 @@ def render(theme_name, data):
 
 
 # ---------------------------------------------------- top repos by lines of code
-TOP_N = 5
+TOP_N = 10
 
 
 def render_repos(theme_name, data):
-    """Animated horizontal bar chart: top public repos by authored lines of code."""
+    """Animated horizontal bar chart: top repos by authored lines of code.
+
+    Includes personal, org, public and private repos, but only repos with
+    authored lines. Columns, left to right: rank, repo, bar, Pvt/Pub,
+    main language, lines. Private names are published only because the
+    user confirmed on 2026-11-01 that private names may be listed.
+    """
     c = THEMES[theme_name]
     T = data["totals"]
-    pub = [r for r in data["repos"] if not r["isPrivate"] and r["name"] != data["user"]["login"]]
-    pub.sort(key=lambda r: r.get("loc_add", 0), reverse=True)
-    pub = pub[:TOP_N]
+    all_repos = [r for r in (data["repos"] + data.get("org_repos", []))
+                 if r["name"] != data["user"]["login"] and r.get("loc_add", 0) > 0]
+    all_repos.sort(key=lambda r: r.get("loc_add", 0), reverse=True)
+    pub = all_repos[:TOP_N]
     max_loc = max((r.get("loc_add", 0) for r in pub), default=1) or 1
 
     TH = 34
     PROMPT_Y = TH + 30
     ROW = 36
-    ROWS_TOP = TH + 56
+    ROWS_TOP = TH + 78
     FOOT_Y = ROWS_TOP + len(pub) * ROW + 4
     HH = FOOT_Y + 24
-    bar_x = 214
-    bar_max = W - bar_x - 118
+    bar_x = 256
+    bar_max = 220
+    vis_x = 492
+    lang_x = 572
     bar_h = 15
 
     p = [
@@ -517,10 +526,24 @@ def render_repos(theme_name, data):
              f'<tspan fill="{c["kw"]}">➜</tspan>  <tspan fill="{c["prop"]}">~</tspan>  '
              f'<tspan fill="{c["t"]}">loc --sort lines --top {TOP_N}</tspan></text>')
 
+    # column headers, aligned with the columns below
+    p.append(f'<text x="44" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">repo</text>')
+    p.append(f'<text x="{vis_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">vis</text>')
+    p.append(f'<text x="{lang_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">language</text>')
+    p.append(f'<text x="{W-24}" y="{ROWS_TOP-18}" text-anchor="end" font-size="11" fill="{c["com"]}">lines</text>')
+
     for i, r in enumerate(pub):
         cy = ROWS_TOP + i * ROW
-        col = (r.get("primaryLanguage") or {}).get("color") or c["status"]
+        lang = (r.get("primaryLanguage") or {})
+        col = lang.get("color") or c["status"]
+        lang_name = lang.get("name") or "—"
+        if len(lang_name) > 16:
+            lang_name = lang_name[:15] + "…"
         name = r["name"]
+        if r.get("org"):
+            name = f'{r["org"]}/{name}'
+        if len(name) > 26:
+            name = name[:25] + "…"
         loc = r.get("loc_add", 0)
         fw = max(4, bar_max * loc / max_loc)
         begin = 0.4 + i * 0.14
@@ -530,11 +553,17 @@ def render_repos(theme_name, data):
         p.append(f'<rect x="{bar_x}" y="{cy-bar_h/2}" width="0" height="{bar_h}" rx="{bar_h/2}" fill="{col}">'
                  f'<animate attributeName="width" begin="{begin:.2f}s" dur="0.8s" from="0" to="{fw:.0f}" '
                  f'fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;{fw:.0f}"/></rect>')
+        p.append(f'<text x="{vis_x}" y="{cy+5}" font-size="13" fill="{c["t"]}">'
+                 f'{"Pvt" if r.get("isPrivate") else "Pub"}</text>')
+        if lang.get("color"):
+            p.append(f'<circle cx="{lang_x}" cy="{cy+1}" r="4" fill="{col}"/>')
+        p.append(f'<text x="{lang_x+12}" y="{cy+5}" font-size="13" fill="{c["t"]}">{esc(lang_name)}</text>')
         p.append(f'<text x="{W-24}" y="{cy+5}" text-anchor="end" font-size="13" fill="{c["prop"]}" '
                  f'class="fin" style="animation-delay:{begin+0.5:.2f}s">{fmt(loc)}</text>')
 
+    total_repos = T["repo_count"] + sum(v.get("repos", 0) for v in (data.get("org_totals") or {}).values())
     p.append(f'<text x="24" y="{FOOT_Y+8}" font-size="12" fill="{c["com"]}">'
-             f'# {T["repo_count"]} repositories · {fmt(T["add"])} lines written · net {fmt(T["net"])}</text>')
+             f'# {total_repos} repositories · {fmt(T["add"])} lines written · net {fmt(T["net"])}</text>')
     p.append("</g></svg>")
     return "\n".join(p)
 
