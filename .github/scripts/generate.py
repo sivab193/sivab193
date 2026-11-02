@@ -481,9 +481,10 @@ def render_repos(theme_name, data):
     """Animated horizontal bar chart: top repos by authored lines of code.
 
     Includes personal, org, public and private repos, but only repos with
-    authored lines. Columns, left to right: rank, repo, bar, Pvt/Pub,
-    main language, lines. Private names are published only because the
-    user confirmed on 2026-11-01 that private names may be listed.
+    authored lines. Columns, left to right: rank, repo, bar, visibility
+    (Private/Public in full), main language, lines. Private names appear
+    in this chart because the user confirmed on 2026-11-01 that private
+    names may be listed; the separate private list in the README is gone.
     """
     c = THEMES[theme_name]
     T = data["totals"]
@@ -500,9 +501,9 @@ def render_repos(theme_name, data):
     FOOT_Y = ROWS_TOP + len(pub) * ROW + 4
     HH = FOOT_Y + 24
     bar_x = 256
-    bar_max = 220
-    vis_x = 492
-    lang_x = 572
+    bar_max = 200
+    vis_x = 472
+    lang_x = 548
     bar_h = 15
 
     p = [
@@ -528,7 +529,7 @@ def render_repos(theme_name, data):
 
     # column headers, aligned with the columns below
     p.append(f'<text x="44" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">repo</text>')
-    p.append(f'<text x="{vis_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">vis</text>')
+    p.append(f'<text x="{vis_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">visibility</text>')
     p.append(f'<text x="{lang_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">language</text>')
     p.append(f'<text x="{W-24}" y="{ROWS_TOP-18}" text-anchor="end" font-size="11" fill="{c["com"]}">lines</text>')
 
@@ -554,7 +555,7 @@ def render_repos(theme_name, data):
                  f'<animate attributeName="width" begin="{begin:.2f}s" dur="0.8s" from="0" to="{fw:.0f}" '
                  f'fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;{fw:.0f}"/></rect>')
         p.append(f'<text x="{vis_x}" y="{cy+5}" font-size="13" fill="{c["t"]}">'
-                 f'{"Pvt" if r.get("isPrivate") else "Pub"}</text>')
+                 f'{"Private" if r.get("isPrivate") else "Public"}</text>')
         if lang.get("color"):
             p.append(f'<circle cx="{lang_x}" cy="{cy+1}" r="4" fill="{col}"/>')
         p.append(f'<text x="{lang_x+12}" y="{cy+5}" font-size="13" fill="{c["t"]}">{esc(lang_name)}</text>')
@@ -568,7 +569,81 @@ def render_repos(theme_name, data):
     return "\n".join(p)
 
 
-# ----------------------------------------------------- commit pulse (ECG monitor)
+
+# ---------------------------------------------------- organisations chart
+def render_orgs(theme_name, data):
+    """Horizontal bar chart: organisations by authored lines of code.
+
+    Same window style as the repos chart. Columns: rank, organisation,
+    bar, repos contributed to, lines written, top repo.
+    """
+    c = THEMES[theme_name]
+    totals = data.get("org_totals") or {}
+    orgs = sorted(totals.items(), key=lambda kv: kv[1]["add"], reverse=True)
+    max_add = max((v["add"] for _, v in orgs), default=1) or 1
+
+    TH = 34
+    PROMPT_Y = TH + 30
+    ROW = 36
+    ROWS_TOP = TH + 78
+    FOOT_Y = ROWS_TOP + len(orgs) * ROW + 4
+    HH = FOOT_Y + 24
+    bar_x = 236
+    bar_max = 200
+    repos_x = 452
+    lines_x = 560
+    top_x = 680
+    bar_h = 15
+
+    p = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{HH}" viewBox="0 0 {W} {HH}" '
+        f'font-family="ui-monospace,SFMono-Regular,\'SF Mono\',Menlo,Consolas,\'Liberation Mono\',monospace">',
+        "<style>text{white-space:pre;}"
+        ".fin{opacity:0;animation:rfin .5s ease forwards;}@keyframes rfin{to{opacity:1;}}"
+        "@media(prefers-reduced-motion:reduce){.fin{opacity:1;animation:none;}}</style>",
+        f'<rect x="0.5" y="0.5" width="{W-1}" height="{HH-1}" rx="{RADIUS}" fill="{c["win"]}" stroke="{c["border"]}"/>',
+        f'<clipPath id="{theme_name}owin"><rect x="0" y="0" width="{W}" height="{HH}" rx="{RADIUS}"/></clipPath>',
+        f'<g clip-path="url(#{theme_name}owin)">',
+        f'<rect x="0" y="0" width="{W}" height="{TH}" fill="{c["title"]}"/>',
+    ]
+    for i, col in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+        p.append(f'<circle cx="{20+i*20}" cy="{TH/2}" r="6" fill="{col}"/>')
+    p.append(f'<text x="{W/2}" y="{TH/2+4}" text-anchor="middle" font-size="13" fill="{c["tabtx_dim"]}">'
+             f'orgs — lines of code by organisation</text>')
+    p.append(f'<text x="24" y="{PROMPT_Y}" font-size="13" class="fin" style="animation-delay:.15s">'
+             f'<tspan fill="{c["kw"]}">➜</tspan>  <tspan fill="{c["prop"]}">~</tspan>  '
+             f'<tspan fill="{c["t"]}">orgs --sort lines</tspan></text>')
+    p.append(f'<text x="44" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">organisation</text>')
+    p.append(f'<text x="{repos_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">repos</text>')
+    p.append(f'<text x="{lines_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">lines</text>')
+    p.append(f'<text x="{top_x}" y="{ROWS_TOP-18}" font-size="11" fill="{c["com"]}">top repo</text>')
+    if not orgs:
+        p.append(f'<text x="44" y="{ROWS_TOP+5}" font-size="13" fill="{c["com"]}">'
+                 f'No org repos with authored lines found on the last run.</text>')
+    for i, (org, v) in enumerate(orgs):
+        cy = ROWS_TOP + i * ROW
+        name = org if len(org) <= 22 else org[:21] + "…"
+        top = v["top"] if len(v["top"]) <= 16 else v["top"][:15] + "…"
+        fw = max(4, bar_max * v["add"] / max_add)
+        begin = 0.4 + i * 0.14
+        p.append(f'<text x="24" y="{cy+5}" font-size="13" fill="{c["gut"]}">{i+1}</text>')
+        p.append(f'<text x="44" y="{cy+5}" font-size="13.5" fill="{c["t"]}">{esc(name)}</text>')
+        p.append(f'<rect x="{bar_x}" y="{cy-bar_h/2}" width="{bar_max}" height="{bar_h}" rx="{bar_h/2}" fill="{c["barbg"]}"/>')
+        p.append(f'<rect x="{bar_x}" y="{cy-bar_h/2}" width="0" height="{bar_h}" rx="{bar_h/2}" fill="{c["status"]}">'
+                 f'<animate attributeName="width" begin="{begin:.2f}s" dur="0.8s" from="0" to="{fw:.0f}" '
+                 f'fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;{fw:.0f}"/></rect>')
+        p.append(f'<text x="{repos_x}" y="{cy+5}" font-size="13" fill="{c["t"]}">{v["repos"]}</text>')
+        p.append(f'<text x="{lines_x}" y="{cy+5}" font-size="13" fill="{c["prop"]}" '
+                 f'class="fin" style="animation-delay:{begin+0.5:.2f}s">{fmt(v["add"])}</text>')
+        p.append(f'<text x="{top_x}" y="{cy+5}" font-size="13" fill="{c["t"]}">{esc(top)}</text>')
+    total_add = sum(v["add"] for _, v in orgs)
+    p.append(f'<text x="24" y="{FOOT_Y+8}" font-size="12" fill="{c["com"]}">'
+             f'# {len(orgs)} organisations · {fmt(total_add)} lines written</text>')
+    p.append("</g></svg>")
+    return "\n".join(p)
+
+
+# ----------------------------------------------------- activity: daily bars, by month
 def _pulse_palette(theme_name):
     if theme_name == "dark":
         return dict(win="#1e1e1e", title="#323233", body="#0d1117", grid="#1b2129",
@@ -579,137 +654,187 @@ def _pulse_palette(theme_name):
                 dim="#59636e", tx="#1f2328", tabtx_dim="#7a7a7a", border="#d0d7de")
 
 
-def render_pulse(theme_name, data):
-    """ECG-style monitor: contribution activity traced as a heartbeat that draws in."""
+def render_activity(theme_name, data):
+    """Daily activity bars for the last year, grouped by month.
+
+    Replaces the old ECG pulse: that drew the same fake heartbeat shape
+    every week regardless of the real days. This draws one real bar per
+    day, so months and the year range are visible at a glance, with the
+    current streak highlighted and the longest streak counted.
+    """
+    import datetime as _dt
     c = _pulse_palette(theme_name)
     cal = data["user"]["contributionsCollection"]["contributionCalendar"]
     weeks = cal["weeks"]
-    week_sums = [sum(d["contributionCount"] for d in w["contributionDays"]) for w in weeks]
     days = [d for w in weeks for d in w["contributionDays"]]
     total = cal["totalContributions"]
     best = max((d["contributionCount"] for d in days), default=0)
+    # current streak: trailing days with contributions, plus longest run
     streak = 0
     for d in reversed(days):
         if d["contributionCount"] > 0:
             streak += 1
         else:
             break
-    maxw = max(week_sums) or 1
+    longest = run = 0
+    best_day = None
+    for d in days:
+        if d["contributionCount"] > 0:
+            run += 1
+            longest = max(longest, run)
+        else:
+            run = 0
+        if best_day is None or d["contributionCount"] > best_day["contributionCount"]:
+            best_day = d
+    # month / year labels from real dates
+    def _parse(ds):
+        try:
+            return _dt.date.fromisoformat(ds)
+        except Exception:
+            return None
+    dates = [_parse(d["date"]) for d in days]
+    first_d = next((x for x in dates if x), None)
+    last_d = next((x for x in reversed(dates) if x), None)
+    if first_d and last_d:
+        title_range = f"{first_d.strftime('%b %Y')} — {last_d.strftime('%b %Y')}"
+    else:
+        title_range = "last year"
+    # month boundaries: first day index of each new month
+    month_labels = []
+    seen = set()
+    for i, dt in enumerate(dates):
+        if dt and (dt.year, dt.month) not in seen:
+            seen.add((dt.year, dt.month))
+            label = dt.strftime("%b")
+            if first_d and dt.year != first_d.year and dt.month == 1:
+                label = dt.strftime("%b %Y")
+            elif i == 0:
+                label = dt.strftime("%b %Y")
+            month_labels.append((i, label))
 
     TH = 34
     READ_Y = 62
-    BASE_Y = 174
-    SPIKE = 86
+    BASE_Y = 188
+    MAX_H = 96
     HH = 252
     PAD = 26
     plot_w = W - 2 * PAD
-    n = len(week_sums)
-    wk = plot_w / n
-
-    # ECG heartbeat complex: (fraction of week, amplitude as multiple of A) ; +up
-    complex_pts = [
-        (0.00, 0.0), (0.16, 0.0), (0.22, 0.14), (0.28, 0.0), (0.33, -0.12),
-        (0.39, 1.0), (0.45, -0.30), (0.51, 0.0), (0.60, 0.24), (0.70, 0.0), (1.0, 0.0),
-    ]
-    pts = []
-    for i, s in enumerate(week_sums):
-        A = s / maxw
-        x0 = PAD + i * wk
-        for frac, amp in complex_pts:
-            x = x0 + frac * wk
-            y = BASE_Y - amp * A * SPIKE
-            pts.append((x, y))
-    d = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts)
+    n = len(days) or 1
+    bw = plot_w / n
+    bar_w = max(1.2, bw * 0.72)
+    # green intensity scale, GitHub-style
+    def _col(count):
+        if count <= 0:
+            return c["base"]
+        if best == 0:
+            return c["line"]
+        r = count / best
+        if r <= 0.25:
+            return "#0e4429"
+        if r <= 0.5:
+            return "#006d32"
+        if r <= 0.75:
+            return "#26a641"
+        return "#39d353"
+    if theme_name == "light":
+        def _col(count):
+            if count <= 0:
+                return c["base"]
+            if best == 0:
+                return c["line"]
+            r = count / best
+            if r <= 0.25:
+                return "#9be9a8"
+            if r <= 0.5:
+                return "#40c463"
+            if r <= 0.75:
+                return "#30a14e"
+            return "#216e39"
 
     p = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
-        f'width="{W}" height="{HH}" viewBox="0 0 {W} {HH}" '
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{HH}" viewBox="0 0 {W} {HH}" '
         f'font-family="ui-monospace,SFMono-Regular,\'SF Mono\',Menlo,Consolas,\'Liberation Mono\',monospace">',
         f"<style>text{{white-space:pre;}}"
-        f".ecg{{stroke-dasharray:1000;stroke-dashoffset:1000;animation:draw 3.4s ease-out forwards;}}"
-        "@keyframes draw{to{stroke-dashoffset:0;}}"
-        ".fin{opacity:0;animation:pf 1s ease forwards;}@keyframes pf{to{opacity:1;}}"
-        "@keyframes beat{0%,100%{r:4px;}50%{r:6px;}}.dot{animation:beat 1s ease-in-out infinite;}"
-        "@media(prefers-reduced-motion:reduce){.ecg{stroke-dashoffset:0;animation:none;}.fin{opacity:1;animation:none;}.dot{animation:none;}}"
-        "</style>",
+        f".fin{{opacity:0;animation:pf 1s ease forwards;}}@keyframes pf{{to{{opacity:1;}}}}"
+        f"@media(prefers-reduced-motion:reduce){{.fin{{opacity:1;animation:none;}}}}</style>",
         f'<rect x="0.5" y="0.5" width="{W-1}" height="{HH-1}" rx="{RADIUS}" fill="{c["win"]}" stroke="{c["border"]}"/>',
-        f'<clipPath id="{theme_name}pwin"><rect x="0" y="0" width="{W}" height="{HH}" rx="{RADIUS}"/></clipPath>',
-        f'<g clip-path="url(#{theme_name}pwin)">',
+        f'<clipPath id="{theme_name}awin"><rect x="0" y="0" width="{W}" height="{HH}" rx="{RADIUS}"/></clipPath>',
+        f'<g clip-path="url(#{theme_name}awin)">',
         f'<rect x="0" y="{TH}" width="{W}" height="{HH-TH}" fill="{c["body"]}"/>',
         f'<rect x="0" y="0" width="{W}" height="{TH}" fill="{c["title"]}"/>',
     ]
     for i, col in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
         p.append(f'<circle cx="{20+i*20}" cy="{TH/2}" r="6" fill="{col}"/>')
     p.append(f'<text x="{W/2}" y="{TH/2+4}" text-anchor="middle" font-size="13" fill="{c["tabtx_dim"]}">'
-             f'commit-pulse — heart of the year</text>')
-
-    # monitor grid
-    gy0, gy1 = TH, HH
-    for gx in range(PAD, W - PAD + 1, 34):
-        p.append(f'<line x1="{gx}" y1="{gy0}" x2="{gx}" y2="{gy1}" stroke="{c["grid"]}" stroke-width="1"/>')
-    for gy in range(TH + 12, HH, 30):
-        p.append(f'<line x1="{PAD}" y1="{gy}" x2="{W-PAD}" y2="{gy}" stroke="{c["grid"]}" stroke-width="1"/>')
-    p.append(f'<line x1="{PAD}" y1="{BASE_Y}" x2="{W-PAD}" y2="{BASE_Y}" stroke="{c["base"]}" stroke-width="1" stroke-dasharray="2 4"/>')
-
+             f'activity — {esc(title_range)}</text>')
     # readouts
     p.append(f'<text x="{PAD}" y="{READ_Y}" font-size="30" font-weight="700" fill="{c["line"]}" '
              f'class="fin" style="animation-delay:.2s">{fmt(total)}</text>')
     p.append(f'<text x="{PAD}" y="{READ_Y+16}" font-size="11" letter-spacing="1.5" fill="{c["dim"]}" '
-             f'class="fin" style="animation-delay:.2s">CONTRIBUTIONS · {n} WEEKS</text>')
+             f'class="fin" style="animation-delay:.2s">CONTRIBUTIONS · {n} DAYS</text>')
     p.append(f'<text x="{W-PAD}" y="{READ_Y-12}" text-anchor="end" font-size="13" fill="{c["tx"]}" '
-             f'class="fin" style="animation-delay:.5s"><tspan fill="{c["line"]}">♥</tspan> {streak}-day streak</text>')
-    p.append(f'<text x="{W-PAD}" y="{READ_Y+8}" text-anchor="end" font-size="13" fill="{c["tx"]}" '
-             f'class="fin" style="animation-delay:.7s"><tspan fill="{c["line"]}">◆</tspan> peak {best}/day</text>')
-
-    # ECG line: soft glow underlay + crisp line (both draw together), sharing path id
-    p.append(f'<path id="{theme_name}ecg" class="ecg" d="{d}" pathLength="1000" fill="none" '
-             f'stroke="{c["glow"]}" stroke-width="6" stroke-opacity="0.22" stroke-linecap="round" stroke-linejoin="round"/>')
-    p.append(f'<path class="ecg" d="{d}" pathLength="1000" fill="none" '
-             f'stroke="{c["line"]}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>')
-
-    # sweeping dot that rides the trace after it draws
-    p.append(f'<g class="fin" style="animation-delay:3.2s">'
-             f'<circle r="10" fill="{c["glow"]}" opacity="0.16"/>'
-             f'<circle class="dot" r="4" fill="{c["line"]}"/>'
-             f'<animateMotion begin="3.4s" dur="5s" repeatCount="indefinite" rotate="0" calcMode="linear">'
-             f'<mpath xlink:href="#{theme_name}ecg"/></animateMotion></g>')
-
+             f'class="fin" style="animation-delay:.5s">◆ {streak}-day streak · longest {longest}</text>')
+    if best_day:
+        p.append(f'<text x="{W-PAD}" y="{READ_Y+8}" text-anchor="end" font-size="13" fill="{c["tx"]}" '
+                 f'class="fin" style="animation-delay:.7s">▲ peak {best}/day on {esc(best_day["date"])}</text>')
+    # baseline
+    p.append(f'<line x1="{PAD}" y1="{BASE_Y}" x2="{W-PAD}" y2="{BASE_Y}" stroke="{c["base"]}" stroke-width="1" stroke-dasharray="2 4"/>')
+    # bars, one per day, current streak in the brightest green
+    streak_start = n - streak if streak else n
+    for i, d in enumerate(days):
+        cnt = d["contributionCount"]
+        h = 3 if cnt == 0 else max(6, MAX_H * cnt / (best or 1))
+        x = PAD + i * bw
+        col = "#39d353" if i >= streak_start and cnt > 0 else _col(cnt)
+        delay = min(1.8, i * 0.005)
+        p.append(f'<rect x="{x:.1f}" y="{BASE_Y-h:.1f}" width="{bar_w:.1f}" height="{h:.1f}" rx="1" fill="{col}" '
+                 f'class="fin" style="animation-delay:{delay:.2f}s"><title>{esc(d["date"])}: {cnt} contributions</title></rect>')
+    # month labels under the baseline, with a tick at each month boundary
+    for i, label in month_labels:
+        x = PAD + i * bw
+        p.append(f'<line x1="{x:.1f}" y1="{BASE_Y+2}" x2="{x:.1f}" y2="{BASE_Y+6}" stroke="{c["dim"]}" stroke-width="1"/>')
+        p.append(f'<text x="{x+2:.1f}" y="{BASE_Y+22}" font-size="11" fill="{c["dim"]}">{esc(label)}</text>')
+    p.append(f'<text x="{W-PAD}" y="{BASE_Y+22}" text-anchor="end" font-size="11" fill="{c["dim"]}">'
+             f'one bar per day · brightest = current streak</text>')
     p.append("</g></svg>")
     return "\n".join(p)
 
 
+render_pulse = render_activity
+
+
 def update_readme(data):
-    """Fill the ORGS and PRIVATE sections of README.md between markers."""
+    """Fill the ORGS section of README.md with the org chart picture.
+
+    The old private-repos list is removed: private repos that make the
+    top 10 already appear in the repos chart, labelled Private, so a
+    separate long private list adds nothing. If a stale private block
+    is still in the README, delete it, heading included.
+    """
     readme_path = os.path.join(ROOT, "README.md")
     if not os.path.exists(readme_path):
         return
     text = open(readme_path, encoding="utf-8").read()
-    cc = data["user"]["contributionsCollection"]
-    restricted = cc.get("restrictedContributionsCount")
-
-    org_totals = data.get("org_totals") or {}
-    if org_totals:
-        rows = ["| Organisation | Repos you contributed to | Lines written | Top repo |",
-                "| --- | ---: | ---: | --- |"]
-        for org, v in sorted(org_totals.items(), key=lambda kv: kv[1]["add"], reverse=True):
-            rows.append(f"| {org} | {v['repos']} | {fmt(v['add'])} | `{v['top']}` |")
-        org_body = "\n".join(rows)
-    else:
-        org_body = ("_No org repos with authored lines found on the last run. "
-                    "Check that GH_PAT has `read:org` scope and is authorised for those orgs._")
+    org_body = (
+        "## \U0001f3e2 Organisations\n\n"
+        '<p align="center">\n'
+        '  <a href="https://github.com/sivab193?tab=repositories">\n'
+        "    <picture>\n"
+        '      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sivab193/sivab193/main/assets/orgs-dark.svg">\n'
+        '      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sivab193/sivab193/main/assets/orgs-light.svg">\n'
+        '      <img alt="Organisations by lines of code" src="https://raw.githubusercontent.com/sivab193/sivab193/main/assets/orgs-light.svg" width="100%">\n'
+        "    </picture>\n"
+        "  </a>\n"
+        "</p>"
+    )
     org_section = f"<!-- ORGS-START -->\n{org_body}\n<!-- ORGS-END -->"
     text, n1 = re.subn(r"<!-- ORGS-START -->.*?<!-- ORGS-END -->", org_section, text, flags=re.S)
-
-    priv = data.get("private_repos") or []
-    if priv:
-        lines = [f"- `{r['owner']}/{r['name']}` — {fmt(r['add'])} lines written" for r in priv]
-        priv_body = "\n".join(lines)
-    else:
-        priv_body = "_No private repos with authored lines found on the last run._"
-    priv_body += f"\n\n_Names only, no links. Code stays private. Restricted (private) contributions in this period: {restricted}._"
-    priv_section = f"<!-- PRIVATE-START -->\n{priv_body}\n<!-- PRIVATE-END -->"
-    text, n2 = re.subn(r"<!-- PRIVATE-START -->.*?<!-- PRIVATE-END -->", priv_section, text, flags=re.S)
-
+    # remove the whole private block, heading included, if present
+    text, n2 = re.subn(
+        r"\n*### \U0001f512 Private builds[^\n]*\n+<!-- PRIVATE-START -->.*?<!-- PRIVATE-END -->",
+        "", text, flags=re.S)
+    if not n2:
+        text, n2 = re.subn(r"<!-- PRIVATE-START -->.*?<!-- PRIVATE-END -->", "", text, flags=re.S)
     if n1 or n2:
         open(readme_path, "w", encoding="utf-8").write(text)
 
@@ -724,7 +849,9 @@ def main():
         with open(os.path.join(ROOT, "assets", f"repos-{theme}.svg"), "w", encoding="utf-8") as f:
             f.write(render_repos(theme, data))
         with open(os.path.join(ROOT, "assets", f"pulse-{theme}.svg"), "w", encoding="utf-8") as f:
-            f.write(render_pulse(theme, data))
+            f.write(render_activity(theme, data))
+        with open(os.path.join(ROOT, "assets", f"orgs-{theme}.svg"), "w", encoding="utf-8") as f:
+            f.write(render_orgs(theme, data))
     update_readme(data)
     sys.stderr.write(
         f"done: +{T['add']:,} / -{T['del']:,} net {T['net']:,} | "
