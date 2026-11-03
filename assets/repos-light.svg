@@ -22,21 +22,21 @@
 <text x="560" y="117" font-size="13" fill="#333333">HTML</text>
 <text x="836" y="117" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">158,490</text>
 <text x="24" y="153" font-size="13" fill="#237893">2</text>
-<text x="44" y="153" font-size="13.5" fill="#333333">movies-tracker</text>
+<text x="44" y="153" font-size="13.5" fill="#333333">SurveyBuilderLLM/app</text>
 <rect x="256" y="140.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="256" y="140.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="99" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;99"/></rect>
-<text x="472" y="153" font-size="13" fill="#333333">Public</text>
+<rect x="256" y="140.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.54s" dur="0.8s" from="0" to="104" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;104"/></rect>
+<text x="472" y="153" font-size="13" fill="#333333">Private</text>
 <circle cx="548" cy="149" r="4" fill="#3178c6"/>
 <text x="560" y="153" font-size="13" fill="#333333">TypeScript</text>
-<text x="836" y="153" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.04s">78,118</text>
+<text x="836" y="153" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.04s">82,397</text>
 <text x="24" y="189" font-size="13" fill="#237893">3</text>
-<text x="44" y="189" font-size="13.5" fill="#333333">SurveyBuilderLLM/app</text>
+<text x="44" y="189" font-size="13.5" fill="#333333">movies-tracker</text>
 <rect x="256" y="176.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="256" y="176.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="89" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;89"/></rect>
-<text x="472" y="189" font-size="13" fill="#333333">Private</text>
+<rect x="256" y="176.5" width="0" height="15" rx="7.5" fill="#3178c6"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="99" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;99"/></rect>
+<text x="472" y="189" font-size="13" fill="#333333">Public</text>
 <circle cx="548" cy="185" r="4" fill="#3178c6"/>
 <text x="560" y="189" font-size="13" fill="#333333">TypeScript</text>
-<text x="836" y="189" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">70,753</text>
+<text x="836" y="189" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">78,118</text>
 <text x="24" y="225" font-size="13" fill="#237893">4</text>
 <text x="44" y="225" font-size="13.5" fill="#333333">citybus-tracker</text>
 <rect x="256" y="212.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
@@ -56,11 +56,11 @@
 <text x="24" y="297" font-size="13" fill="#237893">6</text>
 <text x="44" y="297" font-size="13.5" fill="#333333">SurveyBuilderLLM/backend</text>
 <rect x="256" y="284.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="256" y="284.5" width="0" height="15" rx="7.5" fill="#3572A5"><animate attributeName="width" begin="1.10s" dur="0.8s" from="0" to="63" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;63"/></rect>
+<rect x="256" y="284.5" width="0" height="15" rx="7.5" fill="#3572A5"><animate attributeName="width" begin="1.10s" dur="0.8s" from="0" to="66" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;66"/></rect>
 <text x="472" y="297" font-size="13" fill="#333333">Private</text>
 <circle cx="548" cy="293" r="4" fill="#3572A5"/>
 <text x="560" y="297" font-size="13" fill="#333333">Python</text>
-<text x="836" y="297" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.60s">50,209</text>
+<text x="836" y="297" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.60s">52,429</text>
 <text x="24" y="333" font-size="13" fill="#237893">7</text>
 <text x="44" y="333" font-size="13.5" fill="#333333">artifact-foundry</text>
 <rect x="256" y="320.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
@@ -93,5 +93,5 @@
 <circle cx="548" cy="437" r="4" fill="#3178c6"/>
 <text x="560" y="441" font-size="13" fill="#333333">TypeScript</text>
 <text x="836" y="441" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:2.16s">28,634</text>
-<text x="24" y="484" font-size="12" fill="#008000"># 117 repositories · 1,330,214 lines written · net 1,005,646</text>
+<text x="24" y="484" font-size="12" fill="#008000"># 117 repositories · 1,344,091 lines written · net 1,017,301</text>
 </g></svg>
