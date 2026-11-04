@@ -18,7 +18,7 @@
 <rect x="236" y="104.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
 <rect x="236" y="104.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.40s" dur="0.8s" from="0" to="200" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;200"/></rect>
 <text x="452" y="117" font-size="13" fill="#333333">11</text>
-<text x="560" y="117" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">221,829</text>
+<text x="560" y="117" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">222,384</text>
 <text x="680" y="117" font-size="13" fill="#333333">app</text>
 <text x="24" y="153" font-size="13" fill="#237893">2</text>
 <text x="44" y="153" font-size="13.5" fill="#333333">splitllmbill</text>
@@ -37,9 +37,9 @@
 <text x="24" y="225" font-size="13" fill="#237893">4</text>
 <text x="44" y="225" font-size="13.5" fill="#333333">TerravaMap</text>
 <rect x="236" y="212.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="236" y="212.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="13" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;13"/></rect>
+<rect x="236" y="212.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="14" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;14"/></rect>
 <text x="452" y="225" font-size="13" fill="#333333">1</text>
-<text x="560" y="225" font-size="13" fill="#001080" class="fin" style="animation-delay:1.32s">14,850</text>
+<text x="560" y="225" font-size="13" fill="#001080" class="fin" style="animation-delay:1.32s">15,764</text>
 <text x="680" y="225" font-size="13" fill="#333333">app</text>
-<text x="24" y="268" font-size="12" fill="#008000"># 4 organisations · 339,186 lines written</text>
+<text x="24" y="268" font-size="12" fill="#008000"># 4 organisations · 340,655 lines written</text>
 </g></svg>
