@@ -28,18 +28,18 @@
 <text x="560" y="153" font-size="13" fill="#001080" class="fin" style="animation-delay:1.04s">78,479</text>
 <text x="680" y="153" font-size="13" fill="#333333">flutter-app</text>
 <text x="24" y="189" font-size="13" fill="#237893">3</text>
-<text x="44" y="189" font-size="13.5" fill="#333333">ChennaiRun</text>
+<text x="44" y="189" font-size="13.5" fill="#333333">TerravaMap</text>
 <rect x="236" y="176.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="236" y="176.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="22" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;22"/></rect>
-<text x="452" y="189" font-size="13" fill="#333333">2</text>
-<text x="560" y="189" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">24,028</text>
-<text x="680" y="189" font-size="13" fill="#333333">terra</text>
+<rect x="236" y="176.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="14" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;14"/></rect>
+<text x="452" y="189" font-size="13" fill="#333333">1</text>
+<text x="560" y="189" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">15,764</text>
+<text x="680" y="189" font-size="13" fill="#333333">app</text>
 <text x="24" y="225" font-size="13" fill="#237893">4</text>
-<text x="44" y="225" font-size="13.5" fill="#333333">TerravaMap</text>
+<text x="44" y="225" font-size="13.5" fill="#333333">ChennaiRun</text>
 <rect x="236" y="212.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="236" y="212.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="14" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;14"/></rect>
+<rect x="236" y="212.5" width="0" height="15" rx="7.5" fill="#007acc"><animate attributeName="width" begin="0.82s" dur="0.8s" from="0" to="8" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;8"/></rect>
 <text x="452" y="225" font-size="13" fill="#333333">1</text>
-<text x="560" y="225" font-size="13" fill="#001080" class="fin" style="animation-delay:1.32s">15,764</text>
-<text x="680" y="225" font-size="13" fill="#333333">app</text>
-<text x="24" y="268" font-size="12" fill="#008000"># 4 organisations · 340,655 lines written</text>
+<text x="560" y="225" font-size="13" fill="#001080" class="fin" style="animation-delay:1.32s">9,178</text>
+<text x="680" y="225" font-size="13" fill="#333333">models</text>
+<text x="24" y="268" font-size="12" fill="#008000"># 4 organisations · 325,805 lines written</text>
 </g></svg>
