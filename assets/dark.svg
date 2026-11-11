@@ -18,14 +18,14 @@
 <circle cx="62" cy="50.0" r="4" fill="#569cd6"/>
 <text x="72" y="54.0" font-size="12.5" fill="#cccccc">sivab.tsx</text>
 <text x="150" y="54.0" font-size="12" fill="#8a8a8a">×</text>
-<rect x="164" y="34" width="76" height="32" fill="#2d2d2d"/>
+<rect x="164" y="34" width="156" height="32" fill="#2d2d2d"/>
 <circle cx="178" cy="50.0" r="4" fill="#3178c6"/>
-<text x="188" y="54.0" font-size="12.5" fill="#8a8a8a">meet</text>
-<text x="226" y="54.0" font-size="12" fill="#8a8a8a">×</text>
-<rect x="240" y="34" width="188" height="32" fill="#2d2d2d"/>
-<circle cx="254" cy="50.0" r="4" fill="#3572A5"/>
-<text x="264" y="54.0" font-size="12.5" fill="#8a8a8a">research-assistant</text>
-<text x="414" y="54.0" font-size="12" fill="#8a8a8a">×</text>
+<text x="188" y="54.0" font-size="12.5" fill="#8a8a8a">cycle-and-care</text>
+<text x="306" y="54.0" font-size="12" fill="#8a8a8a">×</text>
+<rect x="320" y="34" width="76" height="32" fill="#2d2d2d"/>
+<circle cx="334" cy="50.0" r="4" fill="#3178c6"/>
+<text x="344" y="54.0" font-size="12.5" fill="#8a8a8a">meet</text>
+<text x="382" y="54.0" font-size="12" fill="#8a8a8a">×</text>
 <text class="fin" style="animation-delay:0.35s" x="88" y="92" text-anchor="end" font-size="12.5" fill="#858585">1</text>
 <clipPath id="darkc0"><rect x="100" y="74" width="0" height="22"><animate attributeName="width" begin="0.35s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#darkc0)" x="100" y="92" font-size="14.5"><tspan fill="#569cd6">const </tspan><tspan fill="#4fc1ff">sivab</tspan><tspan fill="#d4d4d4"> = </tspan><tspan fill="#d4d4d4">{</tspan></text>
@@ -49,7 +49,7 @@
 <text clip-path="url(#darkc6)" x="100" y="224" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">stack</tspan><tspan fill="#d4d4d4">: [</tspan><tspan fill="#ce9178">"TypeScript"</tspan><tspan fill="#d4d4d4">, </tspan><tspan fill="#ce9178">"React"</tspan><tspan fill="#d4d4d4">, </tspan><tspan fill="#ce9178">"Python"</tspan><tspan fill="#d4d4d4">, </tspan><tspan fill="#ce9178">"AWS"</tspan><tspan fill="#d4d4d4">],</tspan></text>
 <text class="fin" style="animation-delay:2.59s" x="88" y="246" text-anchor="end" font-size="12.5" fill="#858585">8</text>
 <clipPath id="darkc7"><rect x="100" y="228" width="0" height="22"><animate attributeName="width" begin="2.59s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
-<text clip-path="url(#darkc7)" x="100" y="246" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">latest</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#ce9178">"meet"</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">   // +98 more shipped</tspan></text>
+<text clip-path="url(#darkc7)" x="100" y="246" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">latest</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#ce9178">"cycle-and-care"</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">   // +98 more shipped</tspan></text>
 <text class="fin" style="animation-delay:2.91s" x="88" y="268" text-anchor="end" font-size="12.5" fill="#858585">9</text>
 <clipPath id="darkc8"><rect x="100" y="250" width="0" height="22"><animate attributeName="width" begin="2.91s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#darkc8)" x="100" y="268" font-size="14.5"><tspan fill="#d4d4d4">  </tspan><tspan fill="#9cdcfe">building</tspan><tspan fill="#d4d4d4">: </tspan><tspan fill="#569cd6">true</tspan><tspan fill="#d4d4d4">,</tspan><tspan fill="#6a9955">        // always</tspan></text>
@@ -119,6 +119,6 @@
 <g clip-path="url(#darkwin)">
 <rect x="0" y="456" width="860" height="38" fill="#007acc"/>
 <text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
-<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 1,380,659 LOC   TypeScript   1390 contribs   ⟳ updated Nov 10</text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 1,380,659 LOC   TypeScript   1390 contribs   ⟳ updated Nov 11</text>
 </g>
 </svg>

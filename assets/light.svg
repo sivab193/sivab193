@@ -18,14 +18,14 @@
 <circle cx="62" cy="50.0" r="4" fill="#0000ff"/>
 <text x="72" y="54.0" font-size="12.5" fill="#333333">sivab.tsx</text>
 <text x="150" y="54.0" font-size="12" fill="#7a7a7a">×</text>
-<rect x="164" y="34" width="76" height="32" fill="#e8e8e8"/>
+<rect x="164" y="34" width="156" height="32" fill="#e8e8e8"/>
 <circle cx="178" cy="50.0" r="4" fill="#3178c6"/>
-<text x="188" y="54.0" font-size="12.5" fill="#7a7a7a">meet</text>
-<text x="226" y="54.0" font-size="12" fill="#7a7a7a">×</text>
-<rect x="240" y="34" width="188" height="32" fill="#e8e8e8"/>
-<circle cx="254" cy="50.0" r="4" fill="#3572A5"/>
-<text x="264" y="54.0" font-size="12.5" fill="#7a7a7a">research-assistant</text>
-<text x="414" y="54.0" font-size="12" fill="#7a7a7a">×</text>
+<text x="188" y="54.0" font-size="12.5" fill="#7a7a7a">cycle-and-care</text>
+<text x="306" y="54.0" font-size="12" fill="#7a7a7a">×</text>
+<rect x="320" y="34" width="76" height="32" fill="#e8e8e8"/>
+<circle cx="334" cy="50.0" r="4" fill="#3178c6"/>
+<text x="344" y="54.0" font-size="12.5" fill="#7a7a7a">meet</text>
+<text x="382" y="54.0" font-size="12" fill="#7a7a7a">×</text>
 <text class="fin" style="animation-delay:0.35s" x="88" y="92" text-anchor="end" font-size="12.5" fill="#237893">1</text>
 <clipPath id="lightc0"><rect x="100" y="74" width="0" height="22"><animate attributeName="width" begin="0.35s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#lightc0)" x="100" y="92" font-size="14.5"><tspan fill="#0000ff">const </tspan><tspan fill="#0070c1">sivab</tspan><tspan fill="#333333"> = </tspan><tspan fill="#333333">{</tspan></text>
@@ -49,7 +49,7 @@
 <text clip-path="url(#lightc6)" x="100" y="224" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">stack</tspan><tspan fill="#333333">: [</tspan><tspan fill="#a31515">"TypeScript"</tspan><tspan fill="#333333">, </tspan><tspan fill="#a31515">"React"</tspan><tspan fill="#333333">, </tspan><tspan fill="#a31515">"Python"</tspan><tspan fill="#333333">, </tspan><tspan fill="#a31515">"AWS"</tspan><tspan fill="#333333">],</tspan></text>
 <text class="fin" style="animation-delay:2.59s" x="88" y="246" text-anchor="end" font-size="12.5" fill="#237893">8</text>
 <clipPath id="lightc7"><rect x="100" y="228" width="0" height="22"><animate attributeName="width" begin="2.59s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
-<text clip-path="url(#lightc7)" x="100" y="246" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">latest</tspan><tspan fill="#333333">: </tspan><tspan fill="#a31515">"meet"</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">   // +98 more shipped</tspan></text>
+<text clip-path="url(#lightc7)" x="100" y="246" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">latest</tspan><tspan fill="#333333">: </tspan><tspan fill="#a31515">"cycle-and-care"</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">   // +98 more shipped</tspan></text>
 <text class="fin" style="animation-delay:2.91s" x="88" y="268" text-anchor="end" font-size="12.5" fill="#237893">9</text>
 <clipPath id="lightc8"><rect x="100" y="250" width="0" height="22"><animate attributeName="width" begin="2.91s" dur="0.5s" from="0" to="744" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#lightc8)" x="100" y="268" font-size="14.5"><tspan fill="#333333">  </tspan><tspan fill="#001080">building</tspan><tspan fill="#333333">: </tspan><tspan fill="#0000ff">true</tspan><tspan fill="#333333">,</tspan><tspan fill="#008000">        // always</tspan></text>
@@ -119,6 +119,6 @@
 <g clip-path="url(#lightwin)">
 <rect x="0" y="456" width="860" height="38" fill="#007acc"/>
 <text x="14" y="473.0" font-size="12" fill="#ffffff">⎇ main <tspan dx="10">↻ 0↓ 0↑</tspan> <tspan dx="10">⊗ 0 ⚠ 0</tspan></text>
-<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 1,380,659 LOC   TypeScript   1390 contribs   ⟳ updated Nov 10</text>
+<text x="846" y="473.0" text-anchor="end" font-size="12" fill="#ffffff">⚡ 1,380,659 LOC   TypeScript   1390 contribs   ⟳ updated Nov 11</text>
 </g>
 </svg>
