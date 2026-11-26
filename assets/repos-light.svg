@@ -20,7 +20,7 @@
 <text x="472" y="117" font-size="13" fill="#333333">Public</text>
 <circle cx="548" cy="113" r="4" fill="#f1e05a"/>
 <text x="560" y="117" font-size="13" fill="#333333">JavaScript</text>
-<text x="836" y="117" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">187,233</text>
+<text x="836" y="117" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:0.90s">187,664</text>
 <text x="24" y="153" font-size="13" fill="#237893">2</text>
 <text x="44" y="153" font-size="13.5" fill="#333333">sarvesh-illam</text>
 <rect x="256" y="140.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
@@ -32,11 +32,11 @@
 <text x="24" y="189" font-size="13" fill="#237893">3</text>
 <text x="44" y="189" font-size="13.5" fill="#333333">cloudclip</text>
 <rect x="256" y="176.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
-<rect x="256" y="176.5" width="0" height="15" rx="7.5" fill="#e34c26"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="169" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;169"/></rect>
+<rect x="256" y="176.5" width="0" height="15" rx="7.5" fill="#e34c26"><animate attributeName="width" begin="0.68s" dur="0.8s" from="0" to="174" fill="freeze" calcMode="spline" keySplines="0.2 0.85 0.25 1" keyTimes="0;1" values="0;174"/></rect>
 <text x="472" y="189" font-size="13" fill="#333333">Public</text>
 <circle cx="548" cy="185" r="4" fill="#e34c26"/>
 <text x="560" y="189" font-size="13" fill="#333333">HTML</text>
-<text x="836" y="189" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">158,490</text>
+<text x="836" y="189" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:1.18s">162,822</text>
 <text x="24" y="225" font-size="13" fill="#237893">4</text>
 <text x="44" y="225" font-size="13.5" fill="#333333">SurveyBuilderLLM/app</text>
 <rect x="256" y="212.5" width="200" height="15" rx="7.5" fill="#e6e6e6"/>
@@ -93,5 +93,5 @@
 <circle cx="548" cy="437" r="4" fill="#3572A5"/>
 <text x="560" y="441" font-size="13" fill="#333333">Python</text>
 <text x="836" y="441" text-anchor="end" font-size="13" fill="#001080" class="fin" style="animation-delay:2.16s">34,317</text>
-<text x="24" y="484" font-size="12" fill="#008000"># 127 repositories · 1,818,655 lines written · net 1,471,865</text>
+<text x="24" y="484" font-size="12" fill="#008000"># 128 repositories · 1,827,113 lines written · net 1,480,310</text>
 </g></svg>
